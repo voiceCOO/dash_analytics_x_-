@@ -1,0 +1,2157 @@
+{
+  "geo": {
+    "2057809232875901102": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 32.1,
+          "tier": 3
+        },
+        {
+          "code": "IN",
+          "pct": 10.4,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 9.1,
+          "tier": 3
+        },
+        {
+          "code": "PH",
+          "pct": 4.6,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 4.3,
+          "tier": 1
+        }
+      ],
+      "other": 39.5,
+      "followersFromFollowers": 45.0,
+      "iOS": 49.4,
+      "gender": {
+        "male": 81.4,
+        "female": 14.3
+      }
+    },
+    "2057116308315971709": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 49.6,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 13.3,
+          "tier": 3
+        },
+        {
+          "code": "IN",
+          "pct": 4.6,
+          "tier": 3
+        },
+        {
+          "code": "BD",
+          "pct": 3.7,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 3.5,
+          "tier": 1
+        }
+      ],
+      "other": 25.4,
+      "followersFromFollowers": 40.1,
+      "iOS": 42.0,
+      "gender": {
+        "male": 82.4,
+        "female": 14.3
+      }
+    },
+    "2057426520801522104": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 49.6,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 6.4,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 5.0,
+          "tier": 1
+        },
+        {
+          "code": "IN",
+          "pct": 4.0,
+          "tier": 3
+        },
+        {
+          "code": "BD",
+          "pct": 3.9,
+          "tier": 3
+        }
+      ],
+      "other": 31.2,
+      "followersFromFollowers": 53.3,
+      "iOS": 44.5,
+      "gender": {
+        "male": 83.8,
+        "female": 14.2
+      }
+    },
+    "2056861155394490504": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 41.3,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 7.3,
+          "tier": 1
+        },
+        {
+          "code": "IN",
+          "pct": 5.7,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 4.4,
+          "tier": 3
+        },
+        {
+          "code": "BD",
+          "pct": 4.2,
+          "tier": 3
+        }
+      ],
+      "other": 37.1,
+      "followersFromFollowers": 55.9,
+      "iOS": 48.4,
+      "gender": {
+        "male": 86.5,
+        "female": 12.2
+      }
+    },
+    "2057144409851126064": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 30.5,
+          "tier": 3
+        },
+        {
+          "code": "DE",
+          "pct": 8.4,
+          "tier": 1
+        },
+        {
+          "code": "UK",
+          "pct": 6.6,
+          "tier": 1
+        },
+        {
+          "code": "PL",
+          "pct": 5.3,
+          "tier": 2
+        },
+        {
+          "code": "US",
+          "pct": 4.4,
+          "tier": 1
+        }
+      ],
+      "other": 44.8,
+      "followersFromFollowers": 44.4,
+      "iOS": 24.7,
+      "web": 43.0,
+      "gender": {
+        "male": 80.9,
+        "female": 16.9
+      }
+    },
+    "2056782084585197688": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 41.5,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 7.7,
+          "tier": 1
+        },
+        {
+          "code": "IN",
+          "pct": 5.4,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 4.0,
+          "tier": 3
+        },
+        {
+          "code": "UK",
+          "pct": 3.5,
+          "tier": 1
+        }
+      ],
+      "other": 37.9,
+      "followersFromFollowers": 56.6,
+      "iOS": 50.5,
+      "gender": {
+        "male": 87.5,
+        "female": 8.9
+      }
+    },
+    "2058227282339041581": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 36.9,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 8.9,
+          "tier": 3
+        },
+        {
+          "code": "IN",
+          "pct": 8.1,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 5.6,
+          "tier": 1
+        },
+        {
+          "code": "BD",
+          "pct": 5.4,
+          "tier": 3
+        }
+      ],
+      "other": 35.0,
+      "followersFromFollowers": 64.3,
+      "iOS": 39.2,
+      "gender": {
+        "male": 81.6,
+        "female": 13.7
+      }
+    },
+    "2057487649384939938": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 35.8,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 12.9,
+          "tier": 3
+        },
+        {
+          "code": "IN",
+          "pct": 4.8,
+          "tier": 3
+        },
+        {
+          "code": "BD",
+          "pct": 4.2,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 4.1,
+          "tier": 1
+        }
+      ],
+      "other": 38.2,
+      "followersFromFollowers": 64.2,
+      "iOS": 48.4,
+      "gender": {
+        "male": 78.7,
+        "female": 20.0
+      }
+    },
+    "2056781967694106861": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 41.8,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 8.6,
+          "tier": 1
+        },
+        {
+          "code": "IN",
+          "pct": 4.4,
+          "tier": 3
+        },
+        {
+          "code": "UK",
+          "pct": 3.3,
+          "tier": 1
+        },
+        {
+          "code": "ID",
+          "pct": 3.2,
+          "tier": 3
+        }
+      ],
+      "other": 38.7,
+      "followersFromFollowers": 59.5,
+      "iOS": 40.8,
+      "web": 21.7,
+      "gender": {
+        "male": 88.1,
+        "female": 9.3
+      }
+    },
+    "2057872315057164588": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 38.9,
+          "tier": 3
+        },
+        {
+          "code": "KZ",
+          "pct": 7.4,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 5.5,
+          "tier": 3
+        },
+        {
+          "code": "IN",
+          "pct": 4.9,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 4.6,
+          "tier": 1
+        }
+      ],
+      "other": 38.6,
+      "followersFromFollowers": 72.9,
+      "iOS": 61.2,
+      "gender": {
+        "male": 80.0,
+        "female": 17.1
+      }
+    },
+    "2058560838491877774": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 47.5,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 7.3,
+          "tier": 3
+        },
+        {
+          "code": "IN",
+          "pct": 6.9,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 5.1,
+          "tier": 1
+        },
+        {
+          "code": "BD",
+          "pct": 4.2,
+          "tier": 3
+        }
+      ],
+      "other": 29.1,
+      "followersFromFollowers": 68.0,
+      "iOS": 38.3,
+      "gender": {
+        "male": 83.0,
+        "female": 12.6
+      }
+    },
+    "2056728800021393810": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 42.2,
+          "tier": 3
+        },
+        {
+          "code": "IN",
+          "pct": 8.2,
+          "tier": 3
+        },
+        {
+          "code": "TR",
+          "pct": 6.0,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 4.3,
+          "tier": 3
+        },
+        {
+          "code": "BD",
+          "pct": 3.9,
+          "tier": 3
+        }
+      ],
+      "other": 35.4,
+      "followersFromFollowers": 72.0,
+      "iOS": 40.2,
+      "gender": {
+        "male": 84.9,
+        "female": 12.5
+      }
+    },
+    "2056490008996110668": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 51.1,
+          "tier": 3
+        },
+        {
+          "code": "IN",
+          "pct": 5.8,
+          "tier": 3
+        },
+        {
+          "code": "BD",
+          "pct": 4.4,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 4.1,
+          "tier": 1
+        },
+        {
+          "code": "ID",
+          "pct": 4.1,
+          "tier": 3
+        }
+      ],
+      "other": 30.5,
+      "followersFromFollowers": 60.6,
+      "iOS": 47.7,
+      "gender": {
+        "male": 86.6,
+        "female": 11.9
+      }
+    },
+    "2056399328982217180": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 53.6,
+          "tier": 3
+        },
+        {
+          "code": "IN",
+          "pct": 4.9,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 4.4,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 4.4,
+          "tier": 1
+        },
+        {
+          "code": "BD",
+          "pct": 3.4,
+          "tier": 3
+        }
+      ],
+      "other": 29.4,
+      "followersFromFollowers": 63.0,
+      "iOS": 61.4,
+      "gender": {
+        "male": 86.1,
+        "female": 12.1
+      }
+    },
+    "2058667173535690849": {
+      "countries": [
+        {
+          "code": "NG",
+          "pct": 45.6,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "pct": 6.6,
+          "tier": 1
+        },
+        {
+          "code": "BR",
+          "pct": 5.8,
+          "tier": 3
+        },
+        {
+          "code": "ID",
+          "pct": 4.2,
+          "tier": 3
+        },
+        {
+          "code": "UK",
+          "pct": 4.0,
+          "tier": 1
+        }
+      ],
+      "other": 33.8,
+      "followersFromFollowers": 71.7,
+      "iOS": 49.1,
+      "gender": {
+        "male": 84.3,
+        "female": 11.8
+      }
+    },
+    "2058964795181691211": {
+      "countries": [],
+      "other": 0,
+      "note": "Audience data not ready yet — too recent (May 25). Will update next week."
+    },
+    "2064480771717407174": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 24.4
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 18.7
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 12.6
+        },
+        {
+          "code": "UK",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "pct": 5.1
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.2
+        }
+      ],
+      "other": 35.0,
+      "source": "x-analytics"
+    },
+    "2064820868832747577": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 37.6
+        },
+        {
+          "code": "DE",
+          "name": "Germany",
+          "flag": "🇩🇪",
+          "pct": 7.1
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 6.7
+        },
+        {
+          "code": "UK",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "pct": 6.3
+        },
+        {
+          "code": "FI",
+          "name": "Finland",
+          "flag": "🇫🇮",
+          "pct": 3.8
+        }
+      ],
+      "other": 38.5,
+      "source": "x-analytics"
+    },
+    "2064728952338358473": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 29.2
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 10.9
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 9.0
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 6.5
+        },
+        {
+          "code": "BD",
+          "name": "Bangladesh",
+          "flag": "🇧🇩",
+          "pct": 4.1
+        }
+      ],
+      "other": 40.3,
+      "source": "x-analytics"
+    },
+    "2064667750878826951": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 48.6
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 7.3
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 5.6
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 3.8
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 3.5
+        }
+      ],
+      "other": 31.3,
+      "source": "x-analytics"
+    },
+    "2064102412588032414": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 23.7
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 9.8
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 9.0
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 7.5
+        },
+        {
+          "code": "PH",
+          "name": "Philippines",
+          "flag": "🇵🇭",
+          "pct": 5.6
+        }
+      ],
+      "other": 44.4,
+      "source": "x-analytics"
+    },
+    "2064075776916341143": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 36.1
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 5.9
+        },
+        {
+          "code": "PK",
+          "name": "Pakistan",
+          "flag": "🇵🇰",
+          "pct": 5.2
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 5.2
+        },
+        {
+          "code": "UK",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "pct": 4.4
+        }
+      ],
+      "other": 43.2,
+      "source": "x-analytics"
+    },
+    "2064016355318174100": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 28.5
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 12.4
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 8.1
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 7.6
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.8
+        }
+      ],
+      "other": 38.6,
+      "source": "x-analytics"
+    },
+    "2064427868336042214": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 53.7
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 5.1
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 4.5
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 3.7
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 3.4
+        }
+      ],
+      "other": 29.6,
+      "source": "x-analytics"
+    },
+    "2064392342992244987": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 30.0
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 13.4
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 12.2
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 4.5
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 3.5
+        }
+      ],
+      "other": 36.5,
+      "source": "x-analytics"
+    },
+    "2064754802467148008": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 41.4
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 7.8
+        },
+        {
+          "code": "UK",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "pct": 6.5
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.1
+        },
+        {
+          "code": "TR",
+          "name": "Turkey",
+          "flag": "🇹🇷",
+          "pct": 3.6
+        }
+      ],
+      "other": 36.6,
+      "source": "x-analytics"
+    },
+    "2061070004359995652": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 34.3
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 8.2
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 6.8
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 4.9
+        },
+        {
+          "code": "BD",
+          "name": "Bangladesh",
+          "flag": "🇧🇩",
+          "pct": 3.8
+        }
+      ],
+      "other": 42.1,
+      "source": "x-analytics"
+    },
+    "2060823426495922322": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 44.3
+        },
+        {
+          "code": "BD",
+          "name": "Bangladesh",
+          "flag": "🇧🇩",
+          "pct": 6.0
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 6.0
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 4.8
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.4
+        }
+      ],
+      "other": 34.4,
+      "source": "x-analytics"
+    },
+    "2060729455283212434": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 34.7
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 9.3
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 5.7
+        },
+        {
+          "code": "BD",
+          "name": "Bangladesh",
+          "flag": "🇧🇩",
+          "pct": 5.5
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 4.5
+        }
+      ],
+      "other": 40.5,
+      "source": "x-analytics"
+    },
+    "2060405748610572427": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 46.9
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 8.5
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 6.0
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 4.5
+        },
+        {
+          "code": "UA",
+          "name": "Ukraine",
+          "flag": "🇺🇦",
+          "pct": 3.5
+        }
+      ],
+      "other": 30.6,
+      "source": "x-analytics"
+    },
+    "2060315643279274478": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 31.9
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 8.4
+        },
+        {
+          "code": "UA",
+          "name": "Ukraine",
+          "flag": "🇺🇦",
+          "pct": 7.7
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 4.9
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.2
+        }
+      ],
+      "other": 43.0,
+      "source": "x-analytics"
+    },
+    "2060300488717832566": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 36.0
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 7.8
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 5.8
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.6
+        },
+        {
+          "code": "TR",
+          "name": "Turkey",
+          "flag": "🇹🇷",
+          "pct": 4.5
+        }
+      ],
+      "other": 41.3,
+      "source": "x-analytics"
+    },
+    "2060122188284407859": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 38.0
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 11.2
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 4.6
+        },
+        {
+          "code": "DE",
+          "name": "Germany",
+          "flag": "🇩🇪",
+          "pct": 3.6
+        },
+        {
+          "code": "UK",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "pct": 3.5
+        }
+      ],
+      "other": 39.2,
+      "source": "x-analytics"
+    },
+    "2059997372298502554": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 27.5
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 14.9
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 8.7
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 4.1
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 3.5
+        }
+      ],
+      "other": 41.3,
+      "source": "x-analytics"
+    },
+    "2059676040205619232": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 30.6
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 11.0
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 6.9
+        },
+        {
+          "code": "BD",
+          "name": "Bangladesh",
+          "flag": "🇧🇩",
+          "pct": 5.8
+        },
+        {
+          "code": "SA",
+          "name": "Saudi Arabia",
+          "flag": "🇸🇦",
+          "pct": 4.0
+        }
+      ],
+      "other": 41.7,
+      "source": "x-analytics"
+    },
+    "2067725050266915167": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 40.8
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 11.7
+        },
+        {
+          "code": "UA",
+          "name": "Ukraine",
+          "flag": "🇺🇦",
+          "pct": 5.9
+        },
+        {
+          "code": "DE",
+          "name": "Germany",
+          "flag": "🇩🇪",
+          "pct": 4.5
+        },
+        {
+          "code": "BR",
+          "name": "Brazil",
+          "flag": "🇧🇷",
+          "pct": 3.8
+        }
+      ],
+      "other": 33.3,
+      "source": "x-analytics"
+    },
+    "2067690262743158792": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 38.1
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 9.7
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.9
+        },
+        {
+          "code": "DE",
+          "name": "Germany",
+          "flag": "🇩🇪",
+          "pct": 4.9
+        },
+        {
+          "code": "PL",
+          "name": "Poland",
+          "flag": "🇵🇱",
+          "pct": 3.6
+        }
+      ],
+      "other": 38.7,
+      "source": "x-analytics"
+    },
+    "2067645305659470077": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 60.2
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 9.0
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 4.1
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 3.2
+        },
+        {
+          "code": "UK",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "pct": 2.4
+        }
+      ],
+      "other": 21.1,
+      "source": "x-analytics"
+    },
+    "2067618005383512536": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 25.8
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 12.4
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 8.6
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.6
+        },
+        {
+          "code": "BD",
+          "name": "Bangladesh",
+          "flag": "🇧🇩",
+          "pct": 3.7
+        }
+      ],
+      "other": 44.9,
+      "source": "x-analytics"
+    },
+    "2067585026703663582": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 28.3
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 16.1
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 9.4
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 5.1
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 3.0
+        }
+      ],
+      "other": 37.9,
+      "source": "x-analytics"
+    },
+    "2067324376949919785": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 28.7
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 11.9
+        },
+        {
+          "code": "BD",
+          "name": "Bangladesh",
+          "flag": "🇧🇩",
+          "pct": 10.4
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 8.7
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 5.2
+        }
+      ],
+      "other": 35.1,
+      "source": "x-analytics"
+    },
+    "2067297174992585158": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 40.5
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 9.6
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 7.7
+        },
+        {
+          "code": "BD",
+          "name": "Bangladesh",
+          "flag": "🇧🇩",
+          "pct": 4.2
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 3.4
+        }
+      ],
+      "other": 34.6,
+      "source": "x-analytics"
+    },
+    "2067291508516978712": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 32.4
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 22.7
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 3.8
+        },
+        {
+          "code": "UK",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "pct": 3.7
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 2.7
+        }
+      ],
+      "other": 34.6,
+      "source": "x-analytics"
+    },
+    "2067246636699414673": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 32.7
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 9.3
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 8.6
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 4.5
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.0
+        }
+      ],
+      "other": 40.8,
+      "source": "x-analytics"
+    },
+    "2067195357381935494": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 32.9
+        },
+        {
+          "code": "LV",
+          "name": "Latvia",
+          "flag": "🇱🇻",
+          "pct": 5.5
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 5.3
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 5.3
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.3
+        }
+      ],
+      "other": 46.7,
+      "source": "x-analytics"
+    },
+    "2067023401445626023": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 21.4
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 13.7
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 8.1
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.8
+        },
+        {
+          "code": "BD",
+          "name": "Bangladesh",
+          "flag": "🇧🇩",
+          "pct": 4.7
+        }
+      ],
+      "other": 47.3,
+      "source": "x-analytics"
+    },
+    "2066996005929689399": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 35.6
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 8.3
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 7.4
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 6.5
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 6.0
+        }
+      ],
+      "other": 36.3,
+      "source": "x-analytics"
+    },
+    "2066965284255138173": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 42.1
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 7.9
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 7.2
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 4.9
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 4.0
+        }
+      ],
+      "other": 34.0,
+      "source": "x-analytics"
+    },
+    "2066928874403889644": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 35.9
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 14.0
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 6.7
+        },
+        {
+          "code": "UK",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "pct": 4.7
+        },
+        {
+          "code": "BD",
+          "name": "Bangladesh",
+          "flag": "🇧🇩",
+          "pct": 3.6
+        }
+      ],
+      "other": 35.0,
+      "source": "x-analytics"
+    },
+    "2066662810092707872": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 32.1
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 7.9
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 6.7
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 6.6
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 6.5
+        }
+      ],
+      "other": 40.2,
+      "source": "x-analytics"
+    },
+    "2066646352482693561": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 29.9
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 12.1
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 7.5
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 5.9
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 5.2
+        }
+      ],
+      "other": 39.4,
+      "source": "x-analytics"
+    },
+    "2066561065635266867": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 45.4
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 7.0
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 6.7
+        },
+        {
+          "code": "UA",
+          "name": "Ukraine",
+          "flag": "🇺🇦",
+          "pct": 5.6
+        },
+        {
+          "code": "BR",
+          "name": "Brazil",
+          "flag": "🇧🇷",
+          "pct": 3.0
+        }
+      ],
+      "other": 32.3,
+      "source": "x-analytics"
+    },
+    "2066287910345687461": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 25.7
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 12.1
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 7.9
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 7.2
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 5.7
+        }
+      ],
+      "other": 41.3,
+      "source": "x-analytics"
+    },
+    "2066203726126141802": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 31.8
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 9.8
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 8.4
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 7.9
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 6.7
+        }
+      ],
+      "other": 35.3,
+      "source": "x-analytics"
+    },
+    "2065936049423942108": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 25.6
+        },
+        {
+          "code": "UA",
+          "name": "Ukraine",
+          "flag": "🇺🇦",
+          "pct": 10.8
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 8.7
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 5.5
+        },
+        {
+          "code": "PK",
+          "name": "Pakistan",
+          "flag": "🇵🇰",
+          "pct": 5.3
+        }
+      ],
+      "other": 44.0,
+      "source": "x-analytics"
+    },
+    "2065821626105577731": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 25.2
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 14.5
+        },
+        {
+          "code": "PH",
+          "name": "Philippines",
+          "flag": "🇵🇭",
+          "pct": 8.9
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 5.7
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 5.0
+        }
+      ],
+      "other": 40.7,
+      "source": "x-analytics"
+    },
+    "2065535994565169561": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 34.7
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 9.7
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 8.4
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "pct": 6.8
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 5.1
+        }
+      ],
+      "other": 35.4,
+      "source": "x-analytics"
+    },
+    "2065371411875565998": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "flag": "🇳🇬",
+          "pct": 48.8
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "flag": "🇻🇳",
+          "pct": 8.6
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "flag": "🇮🇩",
+          "pct": 4.5
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "flag": "🇮🇳",
+          "pct": 4.4
+        },
+        {
+          "code": "NL",
+          "name": "Netherlands",
+          "flag": "🇳🇱",
+          "pct": 3.3
+        }
+      ],
+      "other": 30.4,
+      "source": "x-analytics"
+    }
+  },
+  "categories": {
+    "2057809232875901102": "Giveaway/UGC",
+    "2057116308315971709": "Contest",
+    "2057426520801522104": "Brand declaration",
+    "2056861155394490504": "Space promo (edgy)",
+    "2057144409851126064": "Space recording",
+    "2056782084585197688": "Poll (edgy)",
+    "2058227282339041581": "Engagement bait",
+    "2057487649384939938": "QRT KOL",
+    "2056781967694106861": "Space recording",
+    "2057872315057164588": "QRT community",
+    "2058560838491877774": "Vibe/Mascot",
+    "2056728800021393810": "Vibe/Mascot",
+    "2056490008996110668": "QRT community",
+    "2056399328982217180": "QRT/$$",
+    "2058667173535690849": "Copypasta",
+    "2058964795181691211": "Product announcement"
+  },
+  "verdicts": {
+    "2057809232875901102": "❌ NG magnet — big viral but mostly farmer traffic",
+    "2057116308315971709": "❌❌ WORST for T1 — open contest = nigerian farmer paradise",
+    "2057426520801522104": "😐 Brand fluff — below baseline despite hype",
+    "2056861155394490504": "✅ Above avg — edgy Space title pulls US",
+    "2057144409851126064": "🔥 BEST OF WEEK — pulls DE/UK/PL. Web 43% = serious CT users",
+    "2056782084585197688": "✅ Strong — provocative poll = T1 engagement",
+    "2058227282339041581": "😐 Mid — easy engagement but minimal T1 reach",
+    "2057487649384939938": "😐 Below expectations — KOL QRT didn't bring T1 traffic",
+    "2056781967694106861": "✅ Strong — 2nd best for T1. Space recordings consistently good",
+    "2057872315057164588": "😐 Organic (73% followers) but no T1 — community amplification only",
+    "2058560838491877774": "😐 Mid — vibe-only post, follower-heavy but no T1 pull",
+    "2056728800021393810": "❌ Worst for T1 — brand vibe with zero T1 in top 5",
+    "2056490008996110668": "😐 NG-heavy 51% — community QRT didn't help T1",
+    "2056399328982217180": "❌ Money in headline = NG farmer trigger (53.6% NG)",
+    "2058667173535690849": "✅ Surprise win — copypasta hit 10.6% T1 (3rd best of week)",
+    "2058964795181691211": "⏳ Pending audience data"
+  },
+  "baseline": {
+    "voicehavefun": {
+      "countries": [
+        {
+          "code": "NG",
+          "name": "Nigeria",
+          "pct": 38.4,
+          "tier": 3
+        },
+        {
+          "code": "US",
+          "name": "United States",
+          "pct": 14.5,
+          "tier": 1
+        },
+        {
+          "code": "ID",
+          "name": "Indonesia",
+          "pct": 4.2,
+          "tier": 3
+        },
+        {
+          "code": "IN",
+          "name": "India",
+          "pct": 4.1,
+          "tier": 3
+        },
+        {
+          "code": "UK",
+          "name": "United Kingdom",
+          "pct": 3.2,
+          "tier": 1
+        }
+      ],
+      "other": 35.5,
+      "age": {
+        "13-17": 6.0,
+        "18-24": 37.2,
+        "25-34": 40.8,
+        "35-44": 10.7,
+        "45-54": 3.6,
+        "55-64": 0.5,
+        "65+": 1.2
+      },
+      "gender": {
+        "male": 85.2,
+        "female": 10.6,
+        "notSpecified": 4.2
+      },
+      "devices": {
+        "iOS": 38.9,
+        "android": 41.4,
+        "web": 19.7
+      },
+      "tier1Total": 17.7,
+      "tier3Total": 46.7
+    }
+  }
+}

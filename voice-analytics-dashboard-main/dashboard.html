@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VOICE · X Analytics</title>
+<link rel="icon" href="assets/favicon.ico" />
+<link rel="stylesheet" href="brand.css" />
+<style>
+    /* page-specific */
+    .hero { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: 18px 0 26px; }
+    .hero .tile { padding: 13px 15px; }
+    .hero .stat-value { font-size: 22px; margin-top: 4px; }
+    .hero .stat-sub { margin-top: 4px; }
+    @media (max-width: 1080px) { .hero { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 620px) { .hero { grid-template-columns: repeat(2, 1fr); } }
+
+    .acctrow { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .acct-name { font-family: var(--font-display); font-size: 20px; font-weight: 600; letter-spacing: 0.01em; }
+    .acct-name .h { font-family: var(--font); color: var(--w30); font-weight: 500; font-size: 15px;
+        margin-left: 8px; transition: color 0.15s ease; }
+    .acct-name a.h:hover { color: var(--pink); }
+    .week-title { font-family: var(--font-display); letter-spacing: 0.01em; }
+
+    .toolbar { display: flex; align-items: center; gap: 10px; margin: 4px 0 18px; flex-wrap: wrap; }
+    .sortlabel { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--w30); }
+
+    /* week panel */
+    .week { margin-bottom: 26px; padding: 22px 22px 10px; }
+    .week-head { display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap;
+        padding-bottom: 16px; border-bottom: 1px solid var(--w08); margin-bottom: 16px; }
+    .week-title { font-size: 19px; font-weight: 700; }
+    .week-title .wk { color: var(--w30); font-weight: 500; font-size: 13px; margin-left: 8px; }
+    .week-sum { display: flex; gap: 18px; flex-wrap: wrap; margin-left: auto; }
+    .wsum { text-align: right; }
+    .wsum .l { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--w30); }
+    .wsum .v { font-size: 16px; font-weight: 700; margin-top: 3px; }
+    .wsum .d { font-size: 11px; margin-top: 2px; }
+
+    /* post card */
+    .post { position: relative; padding: 16px 18px 16px 22px; margin-bottom: 12px;
+        border: 1px solid var(--w08); border-radius: var(--radius-md); background: var(--w02);
+        overflow: hidden; }
+    .post::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+    .post.green::before { background: var(--green); }
+    .post.yellow::before { background: var(--peach); }
+    .post.red::before { background: var(--red); }
+    .post-head { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin-bottom: 9px; }
+    .verdict-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px;
+        border-radius: var(--radius-pill); font-size: 12px; font-weight: 700; border: 1px solid; }
+    .post-date { font-size: 12px; color: var(--w30); }
+    .post-text { font-size: 14.5px; color: var(--w); line-height: 1.5; margin: 4px 0 13px;
+        white-space: pre-wrap; word-break: break-word; }
+    .post-text a { color: var(--pink); }
+
+    .metrics { display: flex; gap: 20px; flex-wrap: wrap; align-items: baseline;
+        padding: 11px 0; border-top: 1px solid var(--w06); }
+    .metric .mv { font-size: 16px; font-weight: 700; }
+    .metric .ml { font-size: 11px; color: var(--w30); margin-left: 5px; }
+    .metric .mr { font-size: 10.5px; color: var(--w50); margin-left: 4px; }
+    .imp { font-size: 20px; font-weight: 800; }
+
+    .countries { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+    .cc { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px;
+        border-radius: var(--radius-pill); font-size: 11.5px; border: 1px solid var(--w08); }
+    .cc.t1 { background: var(--green-10); border-color: var(--green-25); }
+    .cc.t2 { background: var(--pink-10); border-color: var(--pink-30); }
+    .cc.t3 { background: var(--red-10); border-color: var(--red-25); }
+    .cc.t0 { background: var(--w04); }
+    .cc .pc { color: var(--w50); }
+
+    .eng { margin-top: 11px; padding-top: 12px; border-top: 1px solid var(--w06); }
+    .eng-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 12.5px; }
+    .eng-head b { font-size: 13.5px; }
+    .distbar { display: flex; height: 7px; border-radius: 99px; overflow: hidden;
+        background: var(--w06); margin: 10px 0; }
+    .distbar > i { display: block; height: 100%; }
+    .seg-whale { background: linear-gradient(90deg, #ffd76c, var(--peach)); }
+    .seg-strong { background: var(--pink); }
+    .seg-mid { background: var(--pink-30); }
+    .seg-low { background: var(--w16); }
+    .engchips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+    .engchip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px;
+        border-radius: var(--radius-pill); border: 1px solid var(--w08); background: var(--w04);
+        font-size: 11.5px; }
+    .engchip .sc { font-weight: 700; font-variant-numeric: tabular-nums; }
+    .kindtag { font-size: 9px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+        color: var(--w30); border: 1px solid var(--w10); border-radius: 5px; padding: 1px 4px; }
+    /* engagement type — pale color coding so the eye can sort RT/RE/QT at a glance */
+    .kindtag.k-repost  { color: #8fe6a6; border-color: rgba(121,255,154,0.35); background: rgba(121,255,154,0.08); }
+    .kindtag.k-comment { color: #d79bf0; border-color: rgba(202,108,239,0.35); background: rgba(202,108,239,0.08); }
+    .kindtag.k-quote   { color: #f0b48f; border-color: rgba(239,156,108,0.40); background: rgba(239,156,108,0.10); }
+    .klegend { display: flex; gap: 12px; font-size: 10.5px; color: var(--w30); margin: 2px 0 2px auto; }
+    .klegend i { font-style: normal; font-weight: 700; }
+
+    /* media quoted badge */
+    .media-thumb .qbadge { position: absolute; left: 6px; top: 6px; font-size: 9px; font-weight: 700;
+        text-transform: uppercase; letter-spacing: 0.04em; color: #f0b48f;
+        background: rgba(0,0,0,0.6); border: 1px solid rgba(239,156,108,0.4);
+        border-radius: 5px; padding: 1px 5px; }
+
+    /* weekly category strip */
+    .catstrip { display: flex; gap: 7px; flex-wrap: wrap; margin: 14px 0 2px; }
+    .catchip { display: inline-flex; align-items: baseline; gap: 6px; padding: 5px 11px;
+        border-radius: var(--radius-pill); border: 1px solid var(--w08); background: var(--w02); font-size: 12px; }
+    .catchip b { font-weight: 700; }
+    .catchip .cq { font-size: 10.5px; color: var(--w30); }
+    .catlabel { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--w30);
+        align-self: center; margin-right: 2px; }
+
+    /* in-panel controls: keep/ok/drop + category filter + sort */
+    .controls { display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+        margin: 16px 0 8px; padding-top: 14px; border-top: 1px solid var(--w06); }
+    .filterbar { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .filterchip { padding: 5px 12px; border-radius: var(--radius-pill); border: 1px solid var(--w08);
+        background: var(--w02); font-size: 12px; color: var(--w50); cursor: pointer; font-family: inherit; }
+    .filterchip:hover { color: var(--w); background: var(--w04); }
+    .filterchip.active { color: var(--w); background: var(--pink-10); border-color: var(--pink-30); }
+    .filterchip span { color: var(--w30); margin-left: 5px; }
+    .sortmini { display: flex; align-items: center; gap: 2px; margin-left: auto; }
+    .sortmini .slbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em;
+        color: var(--w30); margin-right: 6px; }
+    .qhelp { font-size: 11px; color: var(--w30); margin-top: 2px; }
+
+    /* refresh button */
+    .refresh-btn { padding: 9px 16px; border-radius: var(--radius-pill); font-family: inherit;
+        font-size: 13px; font-weight: 600; color: var(--w); cursor: pointer;
+        background: linear-gradient(120deg, var(--pink), var(--purple)); border: none;
+        transition: filter 0.15s ease; white-space: nowrap; }
+    .refresh-btn:hover { filter: brightness(1.12); }
+    .refresh-btn:disabled { opacity: 0.55; cursor: default; }
+
+    /* trends chart */
+    .trends { padding: 18px 22px; margin-bottom: 22px; }
+    .trends-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+    .trends-head .t { font-family: var(--font-display); font-size: 13px; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.04em; color: var(--w50); }
+    .metric-tabs { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--w08);
+        border-radius: var(--radius-pill); flex-wrap: wrap; }
+    .metric-tabs button { padding: 6px 13px; border: none; background: transparent; color: var(--w30);
+        font-size: 12.5px; font-weight: 500; font-family: inherit; border-radius: var(--radius-pill);
+        cursor: pointer; transition: all 0.15s ease; }
+    .metric-tabs button:hover { color: var(--w50); }
+    .metric-tabs button.active { color: var(--w); background: var(--w08); }
+    .chart-wrap { width: 100%; position: relative; }
+    .chart-wrap svg { width: 100%; height: auto; display: block; }
+    .chart-tip { position: absolute; pointer-events: none; opacity: 0; transition: opacity 0.1s ease;
+        background: rgba(13, 11, 17, 0.95); border: 1px solid var(--w16); border-radius: 9px;
+        padding: 6px 10px; min-width: 84px; text-align: center; z-index: 2; }
+    .chart-tip b { display: block; font-size: 14px; font-weight: 700; }
+    .chart-tip span { font-size: 10.5px; color: var(--w30); }
+    .chart-empty { padding: 30px 0; text-align: center; color: var(--w30); font-size: 13px; }
+    .chart-cur { font-size: 22px; font-weight: 700; }
+    .chart-sub { font-size: 11.5px; color: var(--w30); }
+    .tile.clickable { cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease; }
+    .tile.clickable:hover { border-color: var(--pink-30); background: var(--w04); }
+
+    /* week switcher + verdict */
+    .weekbar { display: flex; align-items: center; gap: 10px; margin: 4px 0 16px; flex-wrap: wrap; }
+    .verdict { padding: 20px 22px; margin-bottom: 16px;
+        background: linear-gradient(180deg, rgba(202,108,239,0.07), rgba(255,255,255,0.02)); }
+    .verdict h3 { font-family: var(--font-display); font-size: 14px; font-weight: 600; margin: 0 0 12px;
+        text-transform: uppercase; letter-spacing: 0.04em; color: var(--pink); }
+    .vline { display: flex; gap: 9px; align-items: flex-start; font-size: 13.5px; line-height: 1.5;
+        margin-bottom: 8px; color: var(--w); }
+    .vline .ic { flex: 0 0 auto; width: 58px; font-size: 9.5px; font-weight: 700; letter-spacing: 0.06em;
+        text-transform: uppercase; color: var(--w30); padding-top: 3px; }
+    .vline b { font-weight: 600; }
+    .vrec { margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: var(--pink-06);
+        border: 1px solid var(--pink-25); font-size: 13.5px; line-height: 1.55; }
+    .vrec b { color: var(--pink); }
+    .vpost { color: var(--pink); cursor: pointer; }
+    .vpost:hover { text-decoration: underline; }
+
+    .empty-note { font-size: 12.5px; color: var(--w30); font-style: italic; }
+    .legend { font-size: 11.5px; color: var(--w30); display: flex; gap: 14px; flex-wrap: wrap; }
+    .legend b { color: var(--w50); font-weight: 600; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px;
+        vertical-align: middle; }
+
+    /* media previews */
+    .media { display: flex; gap: 8px; margin: 4px 0 13px; flex-wrap: wrap; }
+    .media-thumb { position: relative; display: block; height: 128px; border-radius: 12px;
+        overflow: hidden; border: 1px solid var(--w08); flex: 0 0 auto; max-width: 220px; }
+    .media-thumb img { height: 100%; width: 100%; object-fit: cover; display: block; }
+    .media-thumb .play { position: absolute; inset: 0; display: flex; align-items: center;
+        justify-content: center; font-size: 26px; color: #fff;
+        background: rgba(0,0,0,0.28); text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+
+    /* tier summary */
+    .tier-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 10px 0 4px; }
+    .tier-chip { display: inline-flex; align-items: baseline; gap: 6px; padding: 5px 12px;
+        border-radius: var(--radius-pill); border: 1px solid; font-size: 12px; font-weight: 600; }
+    .tier-chip b { font-size: 14px; font-variant-numeric: tabular-nums; }
+    .toggle { font-size: 11.5px; color: var(--w50); background: none; border: none; cursor: pointer;
+        font-family: inherit; padding: 4px 6px; border-radius: 8px; }
+    .toggle:hover { color: var(--w); background: var(--w04); }
+    .geo-detail { margin: 8px 0 2px; }
+    .geo-note { font-size: 11px; color: var(--w30); margin-top: 7px; line-height: 1.5; }
+
+    /* engagers dropdown */
+    .eng-all { margin-top: 10px; border-top: 1px solid var(--w06); }
+    .eng-rowx { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 10px;
+        padding: 7px 4px; border-bottom: 1px solid var(--w04); font-size: 12.5px; }
+    .eng-rowx:hover { background: var(--w02); }
+    .eng-rowx .h { font-weight: 500; }
+    .eng-rowx .h:hover { color: var(--pink); }
+    .eng-rowx .fl { font-size: 11px; color: var(--w30); margin-left: 7px; }
+    .eng-rowx .kinds { display: flex; gap: 4px; }
+    .eng-rowx .sc { font-weight: 700; font-variant-numeric: tabular-nums; min-width: 42px; text-align: right; }
+
+    /* ===== growth report + scorecard + leaderboard ===== */
+    .section-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 30px 0 12px; }
+    .section-head .st { font-family: var(--font-display); font-size: 15px; font-weight: 700; letter-spacing: 0.02em; }
+    .section-head .sub { font-size: 12px; color: var(--w30); }
+
+    .report { padding: 22px; margin-bottom: 8px;
+        background: linear-gradient(180deg, rgba(202,108,239,0.07), rgba(255,255,255,0.015)); }
+    .report-head { display: flex; align-items: baseline; gap: 11px; flex-wrap: wrap; margin-bottom: 4px; }
+    .report-head .rng { font-family: var(--font-display); font-size: 21px; font-weight: 700; }
+    .report-head .sub { font-size: 12.5px; color: var(--w30); }
+    .report-tag { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+        padding: 3px 9px; border-radius: var(--radius-pill); }
+    .report-tag.live { color: #8fe6a6; border: 1px solid rgba(121,255,154,0.4); background: rgba(121,255,154,0.08); }
+    .report-tag.done { color: var(--w50); border: 1px solid var(--w10); background: var(--w04); }
+    .verdict-line { font-size: 15px; font-weight: 600; margin: 8px 0 16px; color: var(--w); }
+    .verdict-line.up { color: #8fe6a6; } .verdict-line.down { color: var(--red); }
+
+    .scorecard { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin: 0 0 6px; }
+    @media (max-width: 1080px) { .scorecard { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 620px) { .scorecard { grid-template-columns: repeat(2, 1fr); } }
+    .score-cell { padding: 13px 14px; border: 1px solid var(--w08); border-radius: var(--radius-md); background: var(--w02); }
+    .score-cell .l { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--w30); }
+    .score-cell .v { font-size: 21px; font-weight: 800; margin-top: 5px; font-variant-numeric: tabular-nums; }
+    .score-cell .d { font-size: 11.5px; margin-top: 3px; }
+
+    .narrative { margin: 6px 0 4px; }
+    .toppost { display: flex; gap: 12px; align-items: flex-start; padding: 11px 4px; border-bottom: 1px solid var(--w04); }
+    .toppost .rank { font-family: var(--font-display); font-weight: 800; font-size: 15px; color: var(--pink); min-width: 26px; }
+    .toppost .body { flex: 1; min-width: 0; }
+    .toppost .ptxt { font-size: 13.5px; line-height: 1.45; }
+    .toppost .pmeta { font-size: 11.5px; color: var(--w50); margin-top: 5px; display: flex; gap: 13px; flex-wrap: wrap; }
+    .toppost .pmeta b { color: var(--w); font-variant-numeric: tabular-nums; }
+
+    /* theme pills (product-narrative lens) */
+    .pill.th-OpinionFi { border-color: rgba(121,255,154,0.4); color: #8fe6a6; }
+    .pill.th-SocialFi  { border-color: rgba(239,156,108,0.45); color: #f0b48f; }
+    .pill.th-Product   { border-color: rgba(143,186,240,0.45); color: #8fbaf0; }
+    .pill.th-Community { border-color: var(--pink-30); color: var(--pink); }
+    .pill.th-Other     { color: var(--w50); }
+
+    /* growth badge on post cards */
+    .growth-badge { display: inline-flex; align-items: center; gap: 5px; padding: 5px 11px;
+        border-radius: var(--radius-pill); font-size: 12px; font-weight: 700;
+        border: 1px solid rgba(245,197,99,0.45); color: #f5c563; background: rgba(245,197,99,0.08); }
+    .lb-list { padding: 18px 20px 10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header class="topbar">
+        <div class="brand-lockup">
+            <img src="assets/logo.webp" alt="VOICE" />
+            <div>
+                <div class="bt">VOICE</div>
+                <div class="brand-sub" id="genat">loading…</div>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="lookup.html">Account Lookup</a>
+        </nav>
+        <button class="refresh-btn" id="refreshBtn" title="Re-run the Sorsa collector now">↻ Refresh</button>
+        <div class="usage" id="usage"></div>
+    </header>
+
+    <div class="acctrow">
+        <div class="tabs" id="accttabs"></div>
+    </div>
+
+    <div class="acctrow" style="margin-top:18px">
+        <div class="acct-name" id="acctname"></div>
+    </div>
+
+    <section class="hero" id="hero"></section>
+
+    <div class="weekbar" id="weekbar"></div>
+    <section id="report"></section>
+
+    <section class="card trends" id="trends"></section>
+
+    <section id="leaderboard"></section>
+</div>
+
+<script>
+const SORTS = [
+    { key: 'growth', label: '↓ Growth' },
+    { key: 'reach', label: '↓ Reach×' },
+    { key: 'impressions', label: '↓ Views' },
+    { key: 'quality', label: '↓ Quality' },
+    { key: 'tierppl', label: '↓ T1+2 people' },
+    { key: 'engager', label: '↓ Engager score' },
+    { key: 'date', label: '↓ Date' },
+];
+let DATA = null, ACCT = null, SORT = 'growth', WEEK_IDX = 0, METRIC = 'followers';
+let LB_THEME = 'all', LB_FMT = 'all', LIVE = {};
+
+const METRICS = [
+    { key: 'followers', label: 'Followers', src: 'hist', get: h => h.followers, fmt: v => comma(v), color: '#ca6cef' },
+    { key: 'score', label: 'Sorsa score', src: 'hist', get: h => h.score, fmt: v => round(v, 0), color: '#cf8bf3' },
+    { key: 'influential', label: 'Influential followers', src: 'hist', get: h => h.influencers, fmt: v => comma(v), color: '#f5c563' },
+    { key: 'newfoll', label: 'New followers / wk', src: 'week', get: w => w.summary.newFollowersDelta, fmt: v => v == null ? '—' : comma(v), color: '#8fe6a6' },
+    { key: 'views', label: 'Views / wk', src: 'week', get: w => w.summary.totalImpressions, fmt: v => fmt(v), color: '#ca6cef' },
+    { key: 'growth', label: 'Growth score', src: 'week', get: w => w.summary.avgGrowthScore, fmt: v => round(v, 0), color: '#f5c563' },
+    { key: 'reach', label: 'Reach×', src: 'week', get: w => w.summary.avgReachMultiple, fmt: v => v == null ? '—' : '×' + round(v, 1), color: '#f0b48f' },
+    { key: 'tierppl', label: 'Tier-1+2 people / wk', src: 'week', get: w => w.summary.tier1plus2People, fmt: v => v == null ? '—' : fmt(v), color: '#8fe6a6' },
+    { key: 'quality', label: 'Quality', src: 'week', get: w => w.summary.avgQuality, fmt: v => round(v, 0) + '/100', color: '#79ff9a' },
+    { key: 'er', label: 'Engagement %', src: 'week', get: w => w.summary.avgEngagementRate, fmt: v => round(v, 2) + '%', color: '#ef9c6c' },
+];
+
+// short month names for chart ticks + week labels (avoid TZ surprises from Date parsing)
+const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function weekShort(w) {
+    const [, m1, d1] = w.startDate.split('-').map(Number);
+    const [, m2, d2] = w.endDate.split('-').map(Number);
+    return m1 === m2 ? `${MON[m1 - 1]} ${d1}–${d2}` : `${MON[m1 - 1]} ${d1} – ${MON[m2 - 1]} ${d2}`;
+}
+function weekEndTick(w) { const [, m, d] = w.endDate.split('-').map(Number); return MON[m - 1] + ' ' + d; }
+// the Friday report should open on the last COMPLETE week, not a thin in-progress one
+function defaultWeekIdx(acc) {
+    const today = new Date().toISOString().slice(0, 10);
+    const i = (acc.weeks || []).findIndex(w => w.endDate < today);  // weeks are newest-first
+    return i >= 0 ? i : 0;
+}
+const THEME_COLOR = { OpinionFi: '#8fe6a6', SocialFi: '#f0b48f', Product: '#8fbaf0', Community: '#ca6cef', Other: 'var(--w50)' };
+
+// ---------- helpers ----------
+function el(tag, attrs = {}, children = []) {
+    const n = document.createElement(tag);
+    for (const k in attrs) {
+        if (k === 'class') n.className = attrs[k];
+        else if (k === 'html') n.innerHTML = attrs[k];
+        else n.setAttribute(k, attrs[k]);
+    }
+    (Array.isArray(children) ? children : [children]).forEach(c => {
+        if (c == null) return;
+        n.appendChild(typeof c === 'object' ? c : document.createTextNode(String(c)));
+    });
+    return n;
+}
+const fmt = n => {
+    if (n == null) return '—';
+    if (Math.abs(n) >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M';
+    if (Math.abs(n) >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'k';
+    return String(n);
+};
+const round = (n, d = 1) => n == null ? '—' : Number(n).toFixed(d).replace(/\.0$/, '');
+const comma = n => n == null ? '—' : Number(n).toLocaleString('en-US');
+
+// delta chip: positive=good unless good:'down'
+function delta(v, { suffix = '', good = 'up', show0 = false } = {}) {
+    if (v == null) return el('span', { class: 'flat' }, '—');
+    if (v === 0 && !show0) return el('span', { class: 'flat' }, '±0');
+    const positive = v > 0;
+    const isGood = good === 'up' ? positive : !positive;
+    const cls = v === 0 ? 'flat' : isGood ? 'up' : 'down';
+    const arrow = v > 0 ? '▲' : v < 0 ? '▼' : '·';
+    const av = Math.abs(v);
+    const shown = Number.isInteger(av) ? av : av.toFixed(1);
+    return el('span', { class: cls }, `${arrow} ${shown}${suffix}`);
+}
+
+function engScoreColor(s) {
+    if (s >= 500) return 'var(--peach)';
+    if (s >= 100) return 'var(--pink)';
+    if (s >= 20) return 'var(--w60)';
+    return 'var(--w30)';
+}
+const KIND = { repost: 'RT', comment: 'RE', quote: 'QT' };
+
+// flag image (Windows has no flag emoji glyphs). Our codes ~= ISO2; UK->gb.
+const ISO2 = { UK: 'gb' };
+function flagUrl(code) {
+    const iso = (ISO2[code] || code || '').toLowerCase();
+    return 'https://flagcdn.com/24x18/' + iso + '.png';
+}
+
+// linkify urls + @handles lightly
+function linkify(text) {
+    const esc = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return esc.replace(/https?:\/\/\S+/g, m => `<a href="${m}" target="_blank" rel="noopener">${m.length > 38 ? m.slice(0, 38) + '…' : m}</a>`)
+        .replace(/(^|\s)@(\w{1,15})/g, '$1<a href="https://x.com/$2" target="_blank" rel="noopener">@$2</a>');
+}
+
+// ---------- render ----------
+function renderTabs() {
+    const t = document.getElementById('accttabs');
+    t.innerHTML = '';
+    DATA.accounts.forEach(a => {
+        const b = el('button', { class: 'tab' + (a.handle === ACCT ? ' active' : '') }, [
+            el('span', {}, a.label),
+            el('span', { class: 'muted', style: 'font-size:11px' }, '@' + a.handle),
+        ]);
+        b.onclick = () => { ACCT = a.handle; WEEK_IDX = defaultWeekIdx(DATA.byAccount[a.handle]); LB_THEME = 'all'; LB_FMT = 'all'; render(); };
+        t.appendChild(b);
+    });
+}
+
+function tile(label, valueNode, sub, metricKey) {
+    const t = el('div', { class: 'card tile' + (metricKey ? ' clickable' : '') }, [
+        el('div', { class: 'stat-label' }, label),
+        el('div', { class: 'stat-value' }, valueNode),
+        sub != null ? el('div', { class: 'stat-sub' }, sub) : null,
+    ]);
+    if (metricKey) t.onclick = () => {
+        METRIC = metricKey; renderTrends(DATA.byAccount[ACCT]);
+        document.getElementById('trends').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    };
+    return t;
+}
+
+function buildChart(series, color, fmtY) {
+    const pts0 = series.filter(p => p.y != null);
+    if (!pts0.length) return { svg: '<div class="chart-empty">No history yet — this fills in as the collector runs daily.</div>', meta: null };
+    if (pts0.length === 1) return {
+        svg: `<div class="chart-empty"><div class="chart-cur" style="color:${color}">${fmtY(pts0[0].y)}</div>` +
+            `<div class="chart-sub">${pts0[0].x} · one data point so far — the trend line builds as more weeks/days are collected</div></div>`, meta: null
+    };
+    const W = 840, H = 220, pL = 10, pR = 10, pT = 18, pB = 28;
+    const ys = pts0.map(p => p.y);
+    let min = Math.min(...ys), max = Math.max(...ys);
+    if (min === max) { min -= 1; max += 1; }
+    const pad = (max - min) * 0.15; min -= pad; max += pad;
+    const X = i => pL + (W - pL - pR) * (i / (pts0.length - 1));
+    const Y = v => pT + (H - pT - pB) * (1 - (v - min) / (max - min));
+    const pts = pts0.map((p, i) => ({ x: X(i), y: Y(p.y), label: p.x, val: fmtY(p.y) }));
+    const line = pts.map((p, i) => `${i ? 'L' : 'M'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+    const area = `${line} L${pts[pts.length - 1].x.toFixed(1)},${H - pB} L${pts[0].x.toFixed(1)},${H - pB} Z`;
+    const dots = pts.map(p => `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.2" fill="${color}"/>`).join('');
+    const showIdx = pts.length <= 8 ? pts.map((_, i) => i) : [0, Math.floor(pts.length / 2), pts.length - 1];
+    const xlabels = showIdx.map(i => {
+        const anc = i === 0 ? 'start' : i === pts.length - 1 ? 'end' : 'middle';
+        return `<text x="${pts[i].x.toFixed(1)}" y="${H - 9}" fill="rgba(255,255,255,0.32)" font-size="11" text-anchor="${anc}">${pts[i].label}</text>`;
+    }).join('');
+    const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="${color}" stop-opacity="0.28"/><stop offset="1" stop-color="${color}" stop-opacity="0"/>
+      </linearGradient></defs>
+      <path d="${area}" fill="url(#cg)"/>
+      <path d="${line}" fill="none" stroke="${color}" stroke-width="2.4" stroke-linejoin="round"/>
+      ${dots}${xlabels}</svg>`;
+    return { svg, meta: { W, H, pT, pB, pts, color } };
+}
+
+function wireChartHover(wrap, meta) {
+    const svgEl = wrap.querySelector('svg');
+    const ns = 'http://www.w3.org/2000/svg';
+    const vline = document.createElementNS(ns, 'line');
+    vline.setAttribute('stroke', 'rgba(255,255,255,0.28)'); vline.setAttribute('stroke-width', '1');
+    vline.setAttribute('y1', meta.pT); vline.setAttribute('y2', meta.H - meta.pB); vline.style.opacity = '0';
+    svgEl.appendChild(vline);
+    const hdot = document.createElementNS(ns, 'circle');
+    hdot.setAttribute('r', '5'); hdot.setAttribute('fill', meta.color);
+    hdot.setAttribute('stroke', '#0d0b11'); hdot.setAttribute('stroke-width', '2'); hdot.style.opacity = '0';
+    svgEl.appendChild(hdot);
+    const tip = el('div', { class: 'chart-tip' });
+    wrap.appendChild(tip);
+    const onMove = e => {
+        const rect = svgEl.getBoundingClientRect();
+        const scale = rect.width / meta.W;
+        const vbX = (e.clientX - rect.left) / scale;
+        let bi = 0, bd = 1e9;
+        meta.pts.forEach((p, i) => { const d = Math.abs(p.x - vbX); if (d < bd) { bd = d; bi = i; } });
+        const p = meta.pts[bi];
+        vline.setAttribute('x1', p.x); vline.setAttribute('x2', p.x); vline.style.opacity = '1';
+        hdot.setAttribute('cx', p.x); hdot.setAttribute('cy', p.y); hdot.style.opacity = '1';
+        tip.innerHTML = `<b>${p.val}</b><span>${p.label}</span>`;
+        tip.style.opacity = '1';
+        const px = p.x * scale, py = p.y * scale;
+        tip.style.left = Math.max(0, Math.min(rect.width - 96, px - 48)) + 'px';
+        tip.style.top = Math.max(0, py - 46) + 'px';
+    };
+    svgEl.addEventListener('mousemove', onMove);
+    svgEl.addEventListener('mouseleave', () => { tip.style.opacity = '0'; vline.style.opacity = '0'; hdot.style.opacity = '0'; });
+}
+
+function renderTrends(acc) {
+    const box = document.getElementById('trends');
+    box.innerHTML = '';
+    box.appendChild(el('div', { class: 'trends-head' }, [
+        el('span', { class: 't' }, 'Growth over time'),
+        el('span', { class: 'sub', style: 'font-size:11px;color:var(--w30)' },
+            'weekly metrics by week-ending date · followers/score by day'),
+    ]));
+    const m = METRICS.find(x => x.key === METRIC) || METRICS[0];
+    const tabs = el('div', { class: 'metric-tabs', style: 'margin:12px 0' });
+    METRICS.forEach(o => {
+        const b = el('button', { class: o.key === METRIC ? 'active' : '' }, o.label);
+        b.onclick = () => { METRIC = o.key; renderTrends(acc); };
+        tabs.appendChild(b);
+    });
+    box.appendChild(tabs);
+    let series;
+    if (m.src === 'week') series = [...acc.weeks].reverse().map(w => ({ x: weekEndTick(w), y: m.get(w) }));
+    else series = (acc.history || []).map(h => ({ x: h.day.slice(5), y: m.get(h) }));
+    const { svg, meta } = buildChart(series, m.color, m.fmt);
+    const wrap = el('div', { class: 'chart-wrap' });
+    wrap.innerHTML = svg;
+    box.appendChild(wrap);
+    if (meta) wireChartHover(wrap, meta);
+}
+
+function renderHero(acc) {
+    const s = acc.stats;
+    const hero = document.getElementById('hero');
+    hero.innerHTML = '';
+    document.getElementById('acctname').innerHTML =
+        `${acc.label}<a class="h" href="https://x.com/${acc.handle}" target="_blank" rel="noopener">@${acc.handle}</a>`;
+
+    const live = LIVE[acc.handle] || {};
+    const hist = acc.history || [];
+    // real 7-day delta from our own daily snapshots (Sorsa's follower/influencer
+    // counts are sampled and undercount — snapshots are the truth)
+    const d7 = (key, cur) => {
+        const pts = hist.filter(h => h[key] != null);
+        if (cur == null || pts.length < 2) return null;
+        const t = new Date(pts[pts.length - 1].day + 'T00:00:00Z');
+        t.setUTCDate(t.getUTCDate() - 7);
+        const ago = t.toISOString().slice(0, 10);
+        let base = pts[0][key];
+        for (const h of pts) { if (h.day <= ago) base = h[key]; }
+        return Math.round(cur - base);
+    };
+    const scoreVal = live.score != null ? live.score : s.sorsaScore;
+    const follVal = live.followers != null ? live.followers : s.followers;
+    const inflD = d7('influencers', s.influencers);
+
+    hero.appendChild(tile(live.score != null ? 'Sorsa Score · live' : 'Sorsa Score',
+        round(scoreVal, 0), delta(s.scoreWeekDelta, { suffix: ' /7d' }), 'score'));
+    hero.appendChild(tile(live.followers != null ? 'Followers · live' : 'Followers',
+        comma(follVal), delta(d7('followers', follVal), { suffix: ' /7d' }), 'followers'));
+    hero.appendChild(tile('Influential followers', comma(s.influencers),
+        inflD != null ? delta(inflD, { suffix: ' /7d' }) : `${comma(s.projects || 0)} proj · ${comma(s.vcs || 0)} VC`, 'influential'));
+}
+
+function postCard(p, bestId, wkLabel) {
+    const q = p.quality;
+    const verdictTxt = q.color === 'green' ? 'KEEP' : q.color === 'red' ? 'DROP' : 'OK';
+    const card = el('div', { class: 'post ' + q.color });
+
+    const badge = el('span', {
+        class: 'verdict-badge bg-' + q.color + ' tl-' + q.color,
+    }, `${q.color === 'green' ? '▲' : q.color === 'red' ? '▼' : '●'} ${round(q.composite, 0)} · ${verdictTxt}`);
+
+    const head = el('div', { class: 'post-head' }, [
+        el('span', { class: 'growth-badge', title: 'Growth = reach beyond our audience + tier-1/2 people + engager quality' },
+            'G ' + round(p.growthScore, 0) + (p.reachMultiple != null ? ' · ×' + round(p.reachMultiple, 1) : '')),
+        badge,
+        el('span', { class: 'pill' }, p.category || 'Other'),
+        el('span', { class: 'pill th-' + (p.theme || 'Other') }, p.theme || 'Other'),
+        p.id === bestId ? el('span', { class: 'pill', style: 'border-color:var(--pink-30);color:var(--pink)' }, '★ best this week') : null,
+        wkLabel ? el('span', { class: 'post-date' }, wkLabel) : null,
+        el('span', { class: 'post-date', style: 'margin-left:auto' }, p.date),
+    ]);
+    card.appendChild(head);
+    card.appendChild(el('div', { class: 'post-text', html: linkify(p.text || '') }));
+    const media = renderMedia(p);
+    if (media) card.appendChild(media);
+
+    // engagement metrics
+    const e = p.engagement;
+    const m = el('div', { class: 'metrics' }, [
+        el('div', { class: 'metric' }, [
+            el('span', { class: 'imp' }, fmt(e.impressions)),
+            el('span', { class: 'ml' }, 'impressions'),
+            el('span', { class: 'mr' }, 'ER ' + round(e.engagementRate, 2) + '%'),
+        ]),
+        metric(e.likes, 'likes', e.likeRate),
+        metric(e.reposts, 'reposts', e.repostRate),
+        metric(e.replies, 'replies', e.replyRate),
+        metric(e.quotes, 'quotes', null),
+        metric(e.bookmarks, 'bookmarks', e.bookmarkRate),
+    ]);
+    card.appendChild(m);
+
+    card.appendChild(renderGeo(p));
+    card.appendChild(renderEngagers(p.engagers));
+    return card;
+}
+function metric(v, label, rate) {
+    return el('div', { class: 'metric' }, [
+        el('span', { class: 'mv' }, fmt(v)),
+        el('span', { class: 'ml' }, label),
+        rate != null ? el('span', { class: 'mr' }, round(rate, 2) + '%') : null,
+    ]);
+}
+
+function renderMedia(p) {
+    if (!p.media || !p.media.length) return null;
+    const wrap = el('div', { class: 'media' });
+    p.media.slice(0, 4).forEach(m => {
+        if (!m.preview) return;
+        const a = el('a', { class: 'media-thumb', href: 'https://x.com/' + ACCT + '/status/' + p.id,
+            target: '_blank', rel: 'noopener' }, [
+            el('img', { src: m.preview, loading: 'lazy', alt: m.type || 'media' }),
+        ]);
+        if (m.type === 'video' || m.type === 'animated_gif') a.appendChild(el('span', { class: 'play' }, '▶'));
+        if (m.quoted) a.appendChild(el('span', { class: 'qbadge' }, 'quoted'));
+        wrap.appendChild(a);
+    });
+    return wrap.children.length ? wrap : null;
+}
+
+function tierChip(label, pct, color) {
+    return el('span', { class: 'tier-chip', style: `border-color:${color}66;background:${color}14` }, [
+        el('span', { style: 'color:var(--w60)' }, label),
+        el('b', { style: `color:${color}` }, round(pct, 0) + '%'),
+    ]);
+}
+
+function renderGeo(p) {
+    const box = el('div', { class: 'geo' });
+    const ts = p.tierScore;
+    if (!ts || !p.audience || !p.audience.countries || !p.audience.countries.length) {
+        box.appendChild(el('div', { class: 'countries' }, [
+            el('span', { class: 'empty-note' }, 'No geo yet — needs the weekly X-analytics scrape.')]));
+        return box;
+    }
+    const btn = el('button', { class: 'toggle' }, '▾ countries');
+    box.appendChild(el('div', { class: 'tier-row' }, [
+        tierChip('Tier 1 ', ts.tier1, 'var(--green)'),
+        tierChip('Tier 2 ', ts.tier2, 'var(--pink)'),
+        tierChip('Tier 3 ', ts.tier3, 'var(--red)'),
+        el('span', { class: 'pill' }, 'Other ' + round(ts.other, 0) + '%'),
+        ts.tier1plus2People != null ? el('span', { class: 'pill', style: 'border-color:rgba(121,255,154,0.4);color:#8fe6a6;font-weight:600' },
+            '≈' + fmt(ts.tier1plus2People) + ' T1+2 people') : null,
+        btn,
+    ]));
+
+    const detail = el('div', { class: 'geo-detail', style: 'display:none' });
+    const cc = el('div', { class: 'countries' });
+    p.audience.countries.forEach(c => {
+        cc.appendChild(el('span', { class: 'cc t' + (c.tier || 0) }, [
+            el('img', { class: 'flag', src: flagUrl(c.code), loading: 'lazy', alt: c.code }),
+            el('span', {}, c.name || c.code),
+            el('span', { class: 'pc' }, round(c.pct, 1) + '%'),
+        ]));
+    });
+    detail.appendChild(cc);
+    detail.appendChild(el('div', { class: 'geo-note' },
+        `X exposes only the top-5 countries + “Other”. Shown countries = ${round(ts.tracked, 0)}% of views; ` +
+        `Other ${round(ts.other, 0)}% is everything beyond the top-5 (incl. countries X can’t attribute). ` +
+        `Tier split is of the shown countries · audience = by views.`));
+    box.appendChild(detail);
+    btn.onclick = () => {
+        const open = detail.style.display === 'none';
+        detail.style.display = open ? 'block' : 'none';
+        btn.textContent = (open ? '▴' : '▾') + ' countries';
+    };
+    return box;
+}
+
+function renderEngagers(g) {
+    const box = el('div', { class: 'eng' });
+    if (!g.count) {
+        box.appendChild(el('div', { class: 'empty-note' }, 'No scoreable engagers (no reposts / replies / quotes).'));
+        return box;
+    }
+    const k = g.byKind;
+    box.appendChild(el('div', { class: 'eng-head' }, [
+        el('b', {}, g.count + ' people engaged'),
+        el('span', { class: 'muted' }, `${k.repost || 0} RT · ${k.comment || 0} replies · ${k.quote || 0} quotes`),
+        el('span', { style: 'margin-left:auto' }, [
+            el('b', { style: 'color:' + engScoreColor(g.avgScore) }, 'avg ' + round(g.avgScore, 0)),
+            el('span', { class: 'muted' }, '  median ' + round(g.medianScore, 0)),
+            el('span', { class: 'muted' }, '  · ' + round(g.highQualityPct, 0) + '% high-quality'),
+        ]),
+    ]));
+
+    const b = g.buckets, tot = Math.max(1, b.whale + b.strong + b.mid + b.low);
+    box.appendChild(el('div', { class: 'distbar' }, [
+        seg('seg-whale', b.whale, tot), seg('seg-strong', b.strong, tot),
+        seg('seg-mid', b.mid, tot), seg('seg-low', b.low, tot),
+    ]));
+
+    const chips = el('div', { class: 'engchips' });
+    g.top.forEach(u => chips.appendChild(engChip(u)));
+    box.appendChild(chips);
+
+    if (g.all && g.all.length) {
+        const label = n => `${n ? '▴' : '▾'} all ${g.count} who engaged`;
+        const btn = el('button', { class: 'toggle' }, label(false));
+        const list = el('div', { class: 'eng-all', style: 'display:none' });
+        g.all.forEach(u => {
+            list.appendChild(el('div', { class: 'eng-rowx' }, [
+                el('div', {}, [
+                    el('a', { class: 'h', href: 'https://x.com/' + u.handle, target: '_blank', rel: 'noopener' }, '@' + u.handle),
+                    u.followers != null ? el('span', { class: 'fl' }, fmt(u.followers) + ' flw') : null,
+                ]),
+                el('div', { class: 'kinds' }, (u.kinds || []).map(kd => el('span', { class: 'kindtag k-' + kd }, KIND[kd] || kd))),
+                el('div', { class: 'sc', style: 'color:' + engScoreColor(u.score) }, round(u.score, 0)),
+            ]));
+        });
+        box.appendChild(btn);
+        box.appendChild(list);
+        btn.onclick = () => {
+            const open = list.style.display === 'none';
+            list.style.display = open ? 'block' : 'none';
+            btn.textContent = label(open);
+        };
+    }
+    return box;
+}
+
+function engChip(u) {
+    return el('a', { class: 'engchip', href: 'https://x.com/' + u.handle, target: '_blank', rel: 'noopener' }, [
+        el('span', {}, '@' + u.handle),
+        el('span', { class: 'sc', style: 'color:' + engScoreColor(u.score) }, round(u.score, 0)),
+        ...(u.kinds || []).map(kd => el('span', { class: 'kindtag k-' + kd }, KIND[kd] || kd)),
+    ]);
+}
+function seg(cls, n, tot) {
+    return el('i', { class: cls, style: `width:${(n / tot * 100).toFixed(1)}%` });
+}
+
+function sortPosts(posts) {
+    const c = [...posts];
+    const key = {
+        growth: p => p.growthScore || 0,
+        reach: p => p.reachMultiple || 0,
+        quality: p => p.quality.composite,
+        impressions: p => p.engagement.impressions,
+        tierppl: p => (p.tierScore ? p.tierScore.tier1plus2People : -1),
+        engager: p => p.engagers.avgScore,
+        er: p => p.engagement.engagementRate,
+        date: p => p.date,
+    }[SORT];
+    c.sort((a, b) => (key(b) > key(a) ? 1 : key(b) < key(a) ? -1 : 0));
+    return c;
+}
+
+function wsum(label, value, deltaNode) {
+    return el('div', { class: 'wsum' }, [
+        el('div', { class: 'l' }, label),
+        el('div', { class: 'v' }, value),
+        deltaNode ? el('div', { class: 'd' }, [deltaNode]) : null,
+    ]);
+}
+
+const shorten = (t, n = 46) => { t = (t || '').replace(/https?:\/\/\S+/g, '').replace(/\s+/g, ' ').trim(); return t.length > n ? t.slice(0, n) + '…' : (t || '(media)'); };
+
+function postLink(p, text) {
+    return el('a', { class: 'vpost', href: 'https://x.com/' + ACCT + '/status/' + p.id, target: '_blank', rel: 'noopener' }, text);
+}
+
+function renderWeekSwitcher(acc) {
+    const bar = document.getElementById('weekbar');
+    bar.innerHTML = '';
+    if (!acc.weeks.length) return;
+    WEEK_IDX = Math.min(WEEK_IDX, acc.weeks.length - 1);
+    const tabs = el('div', { class: 'tabs' });
+    acc.weeks.forEach((w, i) => {
+        const b = el('button', { class: 'tab' + (i === WEEK_IDX ? ' active' : '') }, [
+            weekShort(w), i === 0 ? el('span', { class: 'muted', style: 'font-size:10px' }, 'latest') : null]);
+        b.onclick = () => { WEEK_IDX = i; renderReport(acc); renderWeekSwitcher(acc); };
+        tabs.appendChild(b);
+    });
+    bar.appendChild(el('span', { class: 'sortlabel' }, 'Report week'));
+    bar.appendChild(tabs);
+}
+
+function reportVerdictLine(s, d) {
+    const sig = [d.totalImpressions, d.avgQuality, d.tier1plus2People].filter(x => x != null);
+    const ups = sig.filter(x => x > 0).length, downs = sig.filter(x => x < 0).length;
+    const foll = s.newFollowersDelta;
+    const gained = foll != null && foll > 0 ? `+${comma(foll)} followers` : '';
+    const lost = foll != null && foll < 0 ? `lost ${comma(-foll)} followers` : '';
+    let txt, cls = '';
+    if (!sig.length) txt = 'First tracked week — this sets the baseline.';
+    else if (ups >= 2 && ups > downs) { txt = `▲ Good week — reach & quality up${gained ? ', ' + gained : (lost ? ', but ' + lost : '')}.`; cls = 'up'; }
+    else if (downs >= 2 && downs > ups) { txt = `▼ Down week — ${downBits(d)}${gained ? '. Still ' + gained : (lost ? '. Also ' + lost : '')}.`; cls = 'down'; }
+    else txt = `Mixed week${gained ? ' — ' + gained : (lost ? ' — ' + lost : '')}.`;
+    return el('div', { class: 'verdict-line ' + cls }, txt);
+}
+function downBits(d) {
+    const b = [];
+    if (d.totalImpressions < 0) b.push(`views ${fmt(d.totalImpressions)}`);
+    if (d.tier1plus2People < 0) b.push(`${fmt(d.tier1plus2People)} fewer tier-1/2 people`);
+    if (d.avgQuality < 0) b.push(`quality ${round(d.avgQuality, 0)}`);
+    return b.join(', ') || 'softer numbers';
+}
+
+function renderScorecard(s, d) {
+    const grid = el('div', { class: 'scorecard' });
+    const cell = (l, v, dn) => el('div', { class: 'score-cell' },
+        [el('div', { class: 'l' }, l), el('div', { class: 'v' }, v), dn ? el('div', { class: 'd' }, [dn]) : null]);
+    grid.appendChild(cell('New followers', s.newFollowersDelta != null ? (s.newFollowersDelta >= 0 ? '+' : '') + comma(s.newFollowersDelta) : '—'));
+    grid.appendChild(cell('Views', fmt(s.totalImpressions), d.totalImpressions != null ? delta(d.totalImpressions) : null));
+    grid.appendChild(cell('Reach×', s.avgReachMultiple != null ? '×' + round(s.avgReachMultiple, 1) : '—', d.avgReachMultiple != null ? delta(d.avgReachMultiple) : null));
+    grid.appendChild(cell('T1+2 people', s.tier1plus2People != null ? fmt(s.tier1plus2People) : '—', d.tier1plus2People != null ? delta(d.tier1plus2People) : null));
+    grid.appendChild(cell('Quality', round(s.avgQuality, 0) + '/100', d.avgQuality != null ? delta(d.avgQuality) : null));
+    grid.appendChild(cell('Engager score', round(s.avgEngagerScore, 0), d.avgEngagerScore != null ? delta(d.avgEngagerScore) : null));
+    return grid;
+}
+
+function vrow(ic, children) { return el('div', { class: 'vline' }, [el('span', { class: 'ic' }, ic), el('div', {}, children)]); }
+
+function renderNarrative(w) {
+    const s = w.summary, posts = w.posts;
+    const box = el('div', { class: 'narrative' });
+    if (!posts.length) { box.appendChild(el('div', { class: 'vline' }, 'No posts this week.')); return box; }
+    const byG = [...posts].sort((a, b) => (b.growthScore || 0) - (a.growthScore || 0));
+    const top = byG[0], flop = byG[byG.length - 1];
+
+    // WHAT WORKED — the post that reached the most new, valuable people
+    const tw = [];
+    if (top.reachMultiple != null) tw.push(`travelled ×${round(top.reachMultiple, 1)} our follower count (${fmt(top.engagement.impressions)} views)`);
+    if (top.tierScore && top.tierScore.tier1plus2People) tw.push(`reached ${fmt(top.tierScore.tier1plus2People)} tier-1/2 people`);
+    if (top.engagers.count) tw.push(`${top.engagers.count} engagers at avg Sorsa ${round(top.engagers.avgScore, 0)}`);
+    box.appendChild(vrow('WORKED', [el('b', {}, 'Best for new reach: '), postLink(top, `"${shorten(top.text)}"`),
+        ` — ${top.category}. ${tw.join('; ') || 'broad reach'}.`]));
+
+    // WHAT DIDN'T
+    let why = 'low spread';
+    if (!flop.engagers.count) why = 'no real accounts engaged — it stayed in our own bubble';
+    else if (flop.reachMultiple != null && flop.reachMultiple < 0.5) why = `barely left our audience (×${round(flop.reachMultiple, 1)})`;
+    else if (flop.tierScore && flop.tierScore.tier1plus2 < 12) why = 'pulled a farmer-heavy crowd';
+    box.appendChild(vrow('SOFT', [el('b', {}, 'Weakest: '), postLink(flop, `"${shorten(flop.text)}"`),
+        ` — ${flop.category}. ${why}.`]));
+
+    // NARRATIVE DRIFT — OpinionFi vs SocialFi
+    const th = s.themes || [];
+    const op = th.find(x => x.name === 'OpinionFi'), so = th.find(x => x.name === 'SocialFi');
+    if (op || so) {
+        const parts = [];
+        if (op) parts.push(`${op.count} OpinionFi (growth ${round(op.avgGrowthScore, 0)})`);
+        if (so) parts.push(`${so.count} SocialFi (growth ${round(so.avgGrowthScore, 0)})`);
+        let note = '';
+        if (op && so) note = so.avgGrowthScore > op.avgGrowthScore
+            ? ' SocialFi posts reach more new people — but that pulls us off the OpinionFi positioning.'
+            : ' OpinionFi is holding its reach — lean into it.';
+        box.appendChild(vrow('THEME', [el('b', {}, 'Narrative mix: '), parts.join(' · '), '.', note]));
+    }
+
+    // DO NEXT
+    const rec = [];
+    const bestTheme = (s.themes || []).filter(t => t.count >= 2).sort((a, b) => b.avgGrowthScore - a.avgGrowthScore)[0];
+    if (bestTheme) rec.push(`Double down on <b>${bestTheme.name}</b> (best growth at ${round(bestTheme.avgGrowthScore, 0)}).`);
+    rec.push('Lead with a bold line-1 claim and push links below the fold, so the algorithm spreads it past our own followers.');
+    box.appendChild(el('div', { class: 'vrec', html: '<b>Do next week:</b> ' + rec.join(' ') }));
+    return box;
+}
+
+function renderThemeMix(s) {
+    const strip = el('div', { class: 'catstrip' }, [el('span', { class: 'catlabel' }, 'Theme mix')]);
+    (s.themes || []).forEach(t => {
+        strip.appendChild(el('span', { class: 'catchip' }, [
+            el('b', { style: 'color:' + (THEME_COLOR[t.name] || 'var(--w50)') }, t.name),
+            el('span', {}, '×' + t.count),
+            el('span', { class: 'cq' }, 'growth ' + round(t.avgGrowthScore, 0)),
+        ]));
+    });
+    return strip;
+}
+
+function renderTopPosts(acc, w) {
+    const box = el('div', {});
+    box.appendChild(el('div', { class: 'section-head', style: 'margin:16px 0 4px' },
+        [el('span', { class: 'st', style: 'font-size:13px' }, 'Top posts for reaching new people')]));
+    const top = [...w.posts].sort((a, b) => (b.growthScore || 0) - (a.growthScore || 0)).slice(0, 4);
+    top.forEach((p, i) => {
+        box.appendChild(el('div', { class: 'toppost' }, [
+            el('div', { class: 'rank' }, '#' + (i + 1)),
+            el('div', { class: 'body' }, [
+                el('div', { class: 'ptxt' }, [postLink(p, `"${shorten(p.text, 72)}"`)]),
+                el('div', { class: 'pmeta' }, [
+                    el('span', {}, [el('b', {}, 'G ' + round(p.growthScore, 0)), ' growth']),
+                    p.reachMultiple != null ? el('span', {}, [el('b', {}, '×' + round(p.reachMultiple, 1)), ' reach']) : null,
+                    el('span', {}, [el('b', {}, fmt(p.engagement.impressions)), ' views']),
+                    p.tierScore ? el('span', {}, [el('b', {}, fmt(p.tierScore.tier1plus2People)), ' T1/2 ppl']) : null,
+                    el('span', { class: 'pill th-' + (p.theme || 'Other'), style: 'padding:1px 8px' }, p.theme || 'Other'),
+                ]),
+            ]),
+        ]));
+    });
+    return box;
+}
+
+function renderReport(acc) {
+    const box = document.getElementById('report');
+    box.innerHTML = '';
+    if (!acc.weeks.length) { box.appendChild(el('div', { class: 'card report' }, [el('div', { class: 'empty-note' }, 'No weeks yet.')])); return; }
+    WEEK_IDX = Math.min(WEEK_IDX, acc.weeks.length - 1);
+    const w = acc.weeks[WEEK_IDX], s = w.summary, d = w.deltas || {};
+    const card = el('div', { class: 'card report' });
+    const todayISO = new Date().toISOString().slice(0, 10);
+    const tag = w.endDate >= todayISO ? el('span', { class: 'report-tag live' }, 'in progress')
+        : WEEK_IDX === defaultWeekIdx(acc) ? el('span', { class: 'report-tag done' }, 'last complete week')
+            : el('span', { class: 'report-tag done' }, 'past week');
+    card.appendChild(el('div', { class: 'report-head' }, [
+        el('span', { class: 'rng' }, weekShort(w)), tag, el('span', { class: 'sub' }, s.posts + ' posts'),
+    ]));
+    card.appendChild(reportVerdictLine(s, d));
+    card.appendChild(renderScorecard(s, d));
+    card.appendChild(renderNarrative(w));
+    card.appendChild(renderThemeMix(s));
+    card.appendChild(renderTopPosts(acc, w));
+    box.appendChild(card);
+}
+
+function lbChip(kind, key, label, count) {
+    const cur = kind === 'theme' ? LB_THEME : LB_FMT;
+    const b = el('button', { class: 'filterchip' + (cur === key ? ' active' : '') },
+        [label, count != null ? el('span', {}, count) : null]);
+    b.onclick = () => { if (kind === 'theme') LB_THEME = key; else LB_FMT = key; renderLeaderboard(DATA.byAccount[ACCT]); };
+    return b;
+}
+
+function renderLeaderboard(acc) {
+    const box = document.getElementById('leaderboard');
+    box.innerHTML = '';
+    const all = [];
+    acc.weeks.forEach(w => w.posts.forEach(p => all.push(Object.assign({ _wk: weekShort(w) }, p))));
+    box.appendChild(el('div', { class: 'section-head' }, [
+        el('span', { class: 'st' }, 'Content leaderboard'),
+        el('span', { class: 'sub' }, all.length + ' posts · ranked by what reaches new people'),
+    ]));
+
+    const themes = ['all', ...Array.from(new Set(all.map(p => p.theme || 'Other')))];
+    const fmts = ['all', ...Array.from(new Set(all.map(p => p.category || 'Other')))];
+
+    const ctrl = el('div', { class: 'controls', style: 'border-top:none;margin-top:0' });
+    const fbar = el('div', { class: 'filterbar' });
+    themes.forEach(t => fbar.appendChild(lbChip('theme', t, t === 'all' ? 'All themes' : t,
+        all.filter(p => t === 'all' || (p.theme || 'Other') === t).length)));
+    ctrl.appendChild(fbar);
+    const stabs = el('div', { class: 'tabs' });
+    SORTS.forEach(o => {
+        const b = el('button', { class: 'tab' + (o.key === SORT ? ' active' : '') }, o.label);
+        b.onclick = () => { SORT = o.key; renderLeaderboard(acc); };
+        stabs.appendChild(b);
+    });
+    ctrl.appendChild(el('div', { class: 'sortmini' }, [el('span', { class: 'slbl' }, 'Sort'), stabs]));
+    box.appendChild(ctrl);
+
+    const fmtbar = el('div', { class: 'filterbar', style: 'margin:8px 0' });
+    fmts.forEach(f => fmtbar.appendChild(lbChip('fmt', f, f === 'all' ? 'All formats' : f,
+        all.filter(p => f === 'all' || (p.category || 'Other') === f).length)));
+    box.appendChild(fmtbar);
+
+    box.appendChild(el('div', { class: 'qhelp' },
+        'Growth = reach beyond our audience + tier-1/2 people reached + engager quality. ' +
+        'Reach× = views ÷ our followers (how far past our own audience a post travelled).'));
+
+    let posts = all.filter(p => (LB_THEME === 'all' || (p.theme || 'Other') === LB_THEME)
+        && (LB_FMT === 'all' || (p.category || 'Other') === LB_FMT));
+    posts = sortPosts(posts);
+    const list = el('div', { class: 'card week lb-list' });
+    if (!posts.length) list.appendChild(el('div', { class: 'empty-note', style: 'padding:16px 4px' }, 'No posts in this filter.'));
+    posts.forEach(p => list.appendChild(postCard(p, null, p._wk)));
+    box.appendChild(list);
+}
+
+function render() {
+    renderTabs();
+    const acc = DATA.byAccount[ACCT];
+    renderHero(acc);
+    renderWeekSwitcher(acc);
+    renderReport(acc);
+    renderTrends(acc);
+    renderLeaderboard(acc);
+}
+
+function renderTop() {
+    document.getElementById('genat').innerHTML =
+        `<b style="color:var(--pink);font-weight:600;letter-spacing:.04em">ANALYTICS</b> · updated ${DATA.lastUpdated} · ${DATA.accounts.length} accounts · Fri→Fri` + (DATA.mock ? ' · MOCK' : '');
+    if (DATA.usage) {
+        document.getElementById('usage').innerHTML =
+            `<div>Sorsa API · plan ${DATA.usage.plan}</div>
+             <div class="bar"><i style="width:${Math.min(100, DATA.usage.pct)}%"></i></div>
+             <div>${fmt(DATA.usage.used)} / ${fmt(DATA.usage.limit)} (${round(DATA.usage.pct, 2)}%)</div>`;
+    }
+}
+
+function loadData() {
+    return fetch('data.json?_=' + Date.now()).then(r => r.json()).then(d => {
+        DATA = d;
+        if (!ACCT) ACCT = (d.accounts.find(a => a.primary) || d.accounts[0]).handle;
+        renderTop();
+        render();
+    });
+}
+
+const rb = document.getElementById('refreshBtn');
+rb.onclick = () => {
+    rb.disabled = true;
+    rb.textContent = '↻ Refreshing… (~1 min)';
+    fetch('/api/refresh').then(r => r.json()).then(res => {
+        if (res.error) {
+            rb.textContent = '⚠ ' + res.error;
+            setTimeout(() => { rb.disabled = false; rb.textContent = '↻ Refresh'; }, 3000);
+            return;
+        }
+        return loadData().then(() => {
+            rb.textContent = `✓ Updated (${res.requests} req)`;
+            setTimeout(() => { rb.disabled = false; rb.textContent = '↻ Refresh'; }, 2500);
+        });
+    }).catch(e => {
+        rb.disabled = false; rb.textContent = '↻ Refresh'; console.error(e);
+    });
+};
+
+function fetchLive() {
+    fetch('/api/score').then(r => r.json()).then(m => {
+        if (m && !m.error) { LIVE = m; if (DATA) renderHero(DATA.byAccount[ACCT]); }
+    }).catch(() => {});
+}
+setInterval(fetchLive, 120000);
+
+fetch('data.json?_=' + Date.now()).then(r => r.json()).then(d => {
+    DATA = d;
+    ACCT = (d.accounts.find(a => a.primary) || d.accounts[0]).handle;
+    WEEK_IDX = defaultWeekIdx(DATA.byAccount[ACCT]);
+    renderTop();
+    render();
+    fetchLive();
+}).catch(e => {
+    document.getElementById('report').innerHTML =
+        '<div class="card week"><div class="empty-note">Could not load data.json — run the collector first.</div></div>';
+    console.error(e);
+});
+</script>
+</body>
+</html>

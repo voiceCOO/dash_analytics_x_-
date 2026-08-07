@@ -1,0 +1,191 @@
+/* ============================================================
+   VOICE — shared brand design system
+   Tokens + fonts lifted 1:1 from voice-socialfi-mono
+   ============================================================ */
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/inter-variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Sohne Breit';
+    src: url('assets/fonts/sohne-breit-buch.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Sohne Breit';
+    src: url('assets/fonts/sohne-breit-kraftig.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Sohne Breit';
+    src: url('assets/fonts/sohne-breit-dreiviertelfett.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+:root {
+    /* base palette */
+    --bg: #0d0b11;
+    --bg-2: #16161f;
+    --pink: #ca6cef;
+    --pink-50: rgba(202, 108, 239, 0.5);
+    --pink-30: rgba(202, 108, 239, 0.3);
+    --pink-25: rgba(202, 108, 239, 0.25);
+    --pink-10: rgba(202, 108, 239, 0.1);
+    --pink-06: rgba(202, 108, 239, 0.06);
+    --green: #79ff9a;
+    --green-25: rgba(121, 255, 154, 0.25);
+    --green-10: rgba(121, 255, 154, 0.1);
+    --peach: #ef9c6c;
+    --peach-30: rgba(239, 156, 108, 0.3);
+    --peach-10: rgba(239, 156, 108, 0.1);
+    --red: #ef6c6c;
+    --red-25: rgba(239, 108, 108, 0.25);
+    --red-10: rgba(239, 108, 108, 0.1);
+    --purple: #a770ef;
+    --purple-light: #cf8bf3;
+    --purple-dark: #6c3ea9;
+
+    /* whites */
+    --w: #ffffff;
+    --w60: rgba(255, 255, 255, 0.6);
+    --w50: rgba(255, 255, 255, 0.5);
+    --w30: rgba(255, 255, 255, 0.3);
+    --w16: rgba(255, 255, 255, 0.16);
+    --w10: rgba(255, 255, 255, 0.1);
+    --w08: rgba(255, 255, 255, 0.08);
+    --w06: rgba(255, 255, 255, 0.06);
+    --w04: rgba(255, 255, 255, 0.04);
+    --w02: rgba(255, 255, 255, 0.02);
+
+    --radius-card: 32px;
+    --radius-pill: 999px;
+    --radius-md: 16px;
+    --radius-sm: 10px;
+    --maxw: 1240px;
+
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Sohne Breit', 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: var(--w08); border-radius: 99px; }
+
+html, body { margin: 0; padding: 0; }
+body {
+    font-family: var(--font);
+    color: var(--w);
+    background: var(--bg);
+    /* ambient brand glow */
+    background-image:
+        radial-gradient(900px 500px at 12% -8%, rgba(202, 108, 239, 0.16), transparent 60%),
+        radial-gradient(800px 520px at 100% 0%, rgba(103, 62, 169, 0.14), transparent 55%);
+    background-attachment: fixed;
+    line-height: 1.4;
+}
+
+a { color: inherit; text-decoration: none; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---- layout shell ---- */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px 28px 80px; }
+
+.topbar {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 28px;
+}
+.brand-lockup { display: flex; align-items: center; gap: 12px; }
+.brand-lockup img { width: 34px; height: 34px; object-fit: contain;
+    filter: drop-shadow(0 4px 14px rgba(202, 108, 239, 0.45)); }
+.brand-lockup .bt { font-family: var(--font-display); font-size: 22px; font-weight: 700;
+    letter-spacing: 0.005em; line-height: 1; text-transform: uppercase; }
+.brand-lockup .bt span { color: var(--pink); }
+.brand-sub { font-size: 11.5px; color: var(--w30); margin-top: 5px; }
+
+/* country flags (real images — Windows has no flag emoji glyphs) */
+.flag { width: 18px; height: 13px; border-radius: 2px; object-fit: cover;
+    vertical-align: middle; box-shadow: 0 0 0 1px var(--w10); }
+
+.nav { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+.nav a {
+    padding: 9px 16px; border-radius: var(--radius-pill);
+    font-size: 13.5px; font-weight: 500; color: var(--w50);
+    border: 1px solid transparent; transition: all 0.15s ease;
+}
+.nav a:hover { color: var(--w); background: var(--w04); }
+.nav a.active { color: var(--w); background: var(--pink-10);
+    border-color: var(--pink-30); }
+
+/* ---- usage gauge ---- */
+.usage { text-align: right; font-size: 11px; color: var(--w30); }
+.usage .bar { width: 180px; height: 6px; border-radius: 99px; background: var(--w08);
+    overflow: hidden; margin: 6px 0 4px auto; }
+.usage .bar > i { display: block; height: 100%;
+    background: linear-gradient(90deg, var(--pink), var(--purple-light)); }
+
+/* ---- cards ---- */
+.card {
+    background: var(--w04);
+    border: 1px solid var(--w08);
+    border-radius: var(--radius-card);
+}
+.glass {
+    border: 1px solid var(--w08);
+    border-radius: var(--radius-card);
+    background: var(--w02);
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.06),
+        inset 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- pill tabs ---- */
+.tabs { display: inline-flex; gap: 2px; padding: 3px;
+    border: 1px solid var(--w08); border-radius: var(--radius-pill); }
+.tab {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 8px 16px; border: none; background: transparent;
+    color: var(--w30); font-size: 13.5px; font-weight: 500; font-family: inherit;
+    border-radius: var(--radius-pill); cursor: pointer; transition: all 0.15s ease;
+    white-space: nowrap;
+}
+.tab:hover { color: var(--w50); }
+.tab.active { color: var(--w); background: var(--w08); }
+.tab .av { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; }
+
+/* ---- stat tiles ---- */
+.stat-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--w30); }
+.stat-value { font-size: 27px; font-weight: 700; letter-spacing: -0.02em;
+    margin-top: 6px; }
+.stat-sub { font-size: 12px; color: var(--w50); margin-top: 5px; }
+
+/* deltas */
+.up { color: var(--green); }
+.down { color: var(--red); }
+.flat { color: var(--w50); }
+
+/* traffic-light chips */
+.tl-green { color: var(--green); }
+.tl-yellow { color: var(--peach); }
+.tl-red { color: var(--red); }
+.bg-green { background: var(--green-10); border-color: var(--green-25); }
+.bg-yellow { background: var(--peach-10); border-color: var(--peach-30); }
+.bg-red { background: var(--red-10); border-color: var(--red-25); }
+
+.pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 10px; border-radius: var(--radius-pill);
+    border: 1px solid var(--w08); font-size: 11.5px; font-weight: 500;
+    color: var(--w60); background: var(--w04);
+}
+
+.muted { color: var(--w30); }
+.mono-note { font-size: 12px; color: var(--w30); }

@@ -1,0 +1,21 @@
+{
+  "sorsa": {
+    "apiKey": "PASTE_YOUR_SORSA_KEY_HERE",
+    "baseUrl": "https://api.sorsa.io/v3",
+    "plan": "10K",
+    "monthlyLimit": 10000
+  },
+  "accounts": [
+    { "handle": "voicehavefun", "label": "VOICE", "primary": true },
+    { "handle": "killianvoice", "label": "Killian (founder)", "primary": false }
+  ],
+  "retweeterSampleLimit": 50,
+  "scoreCacheDays": 7,
+  "tweetsDaysBack": 16,
+  "highQualityScore": 100,
+  "tierDefinitions": {
+    "tier1": ["US", "UK", "CA", "AU", "SG", "AE", "HK", "KR", "JP", "DE", "FR", "CH", "NL", "FI", "SE", "NO", "DK", "IE", "BE", "AT", "NZ", "IL"],
+    "tier2": ["VN", "PH", "TH", "BR", "TR", "AR", "MX", "UA", "RU", "PL", "ES", "IT", "PT", "ZA", "MY", "SA", "GR", "CZ", "RO"],
+    "tier3": ["NG", "IN", "ID", "BD", "PK", "LK", "NP", "EG", "MA", "DZ", "KE", "GH", "ET", "VE", "CO", "PE", "BO", "UZ", "KZ"]
+  }
+}

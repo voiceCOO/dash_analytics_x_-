@@ -1,0 +1,466 @@
+{
+  "account": "@voicehavefun",
+  "lastUpdated": "2026-05-26",
+  "tierDefinitions": {
+    "tier1": ["US", "UK", "DE", "FR", "NL", "AU", "CA", "JP"],
+    "tier2": ["PL", "KR", "IL", "ES", "IT", "SE", "NO", "DK", "FI", "AT", "CH", "BE", "IE", "NZ"],
+    "tier3": ["NG", "IN", "ID", "BD", "PK", "PH", "VN"]
+  },
+  "weeks": [
+    {
+      "weekNumber": 21,
+      "startDate": "2026-05-18",
+      "endDate": "2026-05-25",
+      "baseline": {
+        "countries": [
+          { "code": "NG", "name": "Nigeria", "pct": 38.4, "tier": 3 },
+          { "code": "US", "name": "United States", "pct": 14.5, "tier": 1 },
+          { "code": "ID", "name": "Indonesia", "pct": 4.2, "tier": 3 },
+          { "code": "IN", "name": "India", "pct": 4.1, "tier": 3 },
+          { "code": "UK", "name": "United Kingdom", "pct": 3.2, "tier": 1 }
+        ],
+        "other": 35.5,
+        "age": { "13-17": 6.0, "18-24": 37.2, "25-34": 40.8, "35-44": 10.7, "45-54": 3.6, "55-64": 0.5, "65+": 1.2 },
+        "gender": { "male": 85.2, "female": 10.6, "notSpecified": 4.2 },
+        "devices": { "iOS": 38.9, "android": 41.4, "web": 19.7 },
+        "tier1Total": 17.7,
+        "tier3Total": 46.7
+      },
+      "posts": [
+        {
+          "id": "2057809232875901102",
+          "date": "2026-05-22",
+          "text": "to celebrate bitcoin pizza day — we are giving away 10 free pizzas",
+          "category": "Giveaway/UGC",
+          "engagement": {
+            "impressions": 24000,
+            "likes": 452,
+            "replies": 382,
+            "reposts": 147,
+            "engagementRate": 8.8,
+            "profileVisits": 574,
+            "newFollows": 105,
+            "bookmarks": 44
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 32.1, "tier": 3 },
+              { "code": "IN", "pct": 10.4, "tier": 3 },
+              { "code": "ID", "pct": 9.1, "tier": 3 },
+              { "code": "PH", "pct": 4.6, "tier": 3 },
+              { "code": "US", "pct": 4.3, "tier": 1 }
+            ],
+            "other": 39.5,
+            "followersFromFollowers": 45.0,
+            "iOS": 49.4,
+            "gender": { "male": 81.4, "female": 14.3 }
+          },
+          "tierScore": { "tier1": 4.3, "tier2": 0, "tier1plus2": 4.3 },
+          "verdict": "❌ NG magnet — big viral but mostly farmer traffic"
+        },
+        {
+          "id": "2057116308315971709",
+          "date": "2026-05-20",
+          "text": "meme contest is live — make the funniest meme about VOICE",
+          "category": "Contest",
+          "engagement": {
+            "impressions": 12000,
+            "likes": 214,
+            "replies": 115,
+            "reposts": 33
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 49.6, "tier": 3 },
+              { "code": "ID", "pct": 13.3, "tier": 3 },
+              { "code": "IN", "pct": 4.6, "tier": 3 },
+              { "code": "BD", "pct": 3.7, "tier": 3 },
+              { "code": "US", "pct": 3.5, "tier": 1 }
+            ],
+            "other": 25.4,
+            "followersFromFollowers": 40.1,
+            "iOS": 42.0,
+            "gender": { "male": 82.4, "female": 14.3 }
+          },
+          "tierScore": { "tier1": 3.5, "tier2": 0, "tier1plus2": 3.5 },
+          "verdict": "❌❌ WORST for T1 — open contest = nigerian farmer paradise"
+        },
+        {
+          "id": "2057426520801522104",
+          "date": "2026-05-21",
+          "text": "we've got something to say. (Manifesto)",
+          "category": "Brand declaration",
+          "engagement": {
+            "impressions": 4000,
+            "likes": 143,
+            "replies": 57,
+            "reposts": 15
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 49.6, "tier": 3 },
+              { "code": "ID", "pct": 6.4, "tier": 3 },
+              { "code": "US", "pct": 5.0, "tier": 1 },
+              { "code": "IN", "pct": 4.0, "tier": 3 },
+              { "code": "BD", "pct": 3.9, "tier": 3 }
+            ],
+            "other": 31.2,
+            "followersFromFollowers": 53.3,
+            "iOS": 44.5,
+            "gender": { "male": 83.8, "female": 14.2 }
+          },
+          "tierScore": { "tier1": 5.0, "tier2": 0, "tier1plus2": 5.0 },
+          "verdict": "😐 Brand fluff — below baseline despite hype"
+        },
+        {
+          "id": "2056861155394490504",
+          "date": "2026-05-20",
+          "text": "kols got paid to pump a token — it rugged. is that a crime or just business? (Space promo)",
+          "category": "Space promo (edgy)",
+          "engagement": {
+            "impressions": 3600,
+            "likes": 134,
+            "replies": 55,
+            "reposts": 20
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 41.3, "tier": 3 },
+              { "code": "US", "pct": 7.3, "tier": 1 },
+              { "code": "IN", "pct": 5.7, "tier": 3 },
+              { "code": "ID", "pct": 4.4, "tier": 3 },
+              { "code": "BD", "pct": 4.2, "tier": 3 }
+            ],
+            "other": 37.1,
+            "followersFromFollowers": 55.9,
+            "iOS": 48.4,
+            "gender": { "male": 86.5, "female": 12.2 }
+          },
+          "tierScore": { "tier1": 7.3, "tier2": 0, "tier1plus2": 7.3 },
+          "verdict": "✅ Above avg — edgy Space title pulls US"
+        },
+        {
+          "id": "2057144409851126064",
+          "date": "2026-05-20",
+          "text": "SHILLING IS NOT A CRIME (Space recording)",
+          "category": "Space recording",
+          "engagement": {
+            "impressions": 2500,
+            "likes": 77,
+            "replies": 39,
+            "reposts": 15,
+            "spaceListeners": 191
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 30.5, "tier": 3 },
+              { "code": "DE", "pct": 8.4, "tier": 1 },
+              { "code": "UK", "pct": 6.6, "tier": 1 },
+              { "code": "PL", "pct": 5.3, "tier": 2 },
+              { "code": "US", "pct": 4.4, "tier": 1 }
+            ],
+            "other": 44.8,
+            "followersFromFollowers": 44.4,
+            "iOS": 24.7,
+            "web": 43.0,
+            "gender": { "male": 80.9, "female": 16.9 }
+          },
+          "tierScore": { "tier1": 19.4, "tier2": 5.3, "tier1plus2": 24.7 },
+          "verdict": "🔥 BEST OF WEEK — pulls DE/UK/PL. Web 43% = serious CT users"
+        },
+        {
+          "id": "2056782084585197688",
+          "date": "2026-05-19",
+          "text": "NFT communities are... (poll: actually worth it 66.7% vs expensive group chat 33.3%)",
+          "category": "Poll (edgy)",
+          "engagement": {
+            "impressions": 2000,
+            "likes": 64,
+            "replies": 21,
+            "reposts": 1,
+            "pollVotes": 9
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 41.5, "tier": 3 },
+              { "code": "US", "pct": 7.7, "tier": 1 },
+              { "code": "IN", "pct": 5.4, "tier": 3 },
+              { "code": "ID", "pct": 4.0, "tier": 3 },
+              { "code": "UK", "pct": 3.5, "tier": 1 }
+            ],
+            "other": 37.9,
+            "followersFromFollowers": 56.6,
+            "iOS": 50.5,
+            "gender": { "male": 87.5, "female": 8.9 }
+          },
+          "tierScore": { "tier1": 11.2, "tier2": 0, "tier1plus2": 11.2 },
+          "verdict": "✅ Strong — provocative poll = T1 engagement"
+        },
+        {
+          "id": "2058227282339041581",
+          "date": "2026-05-23",
+          "text": "which one is better? asking for a friend",
+          "category": "Engagement bait",
+          "engagement": {
+            "impressions": 1900,
+            "likes": 111,
+            "replies": 66,
+            "reposts": 5
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 36.9, "tier": 3 },
+              { "code": "ID", "pct": 8.9, "tier": 3 },
+              { "code": "IN", "pct": 8.1, "tier": 3 },
+              { "code": "US", "pct": 5.6, "tier": 1 },
+              { "code": "BD", "pct": 5.4, "tier": 3 }
+            ],
+            "other": 35.0,
+            "followersFromFollowers": 64.3,
+            "iOS": 39.2,
+            "gender": { "male": 81.6, "female": 13.7 }
+          },
+          "tierScore": { "tier1": 5.6, "tier2": 0, "tier1plus2": 5.6 },
+          "verdict": "😐 Mid — easy engagement but minimal T1 reach"
+        },
+        {
+          "id": "2057487649384939938",
+          "date": "2026-05-21",
+          "text": "this opinion had value. nobody shorted it (QRT @waleswoosh)",
+          "category": "QRT KOL",
+          "engagement": {
+            "impressions": 1800,
+            "likes": 87,
+            "replies": 24,
+            "reposts": 7
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 35.8, "tier": 3 },
+              { "code": "ID", "pct": 12.9, "tier": 3 },
+              { "code": "IN", "pct": 4.8, "tier": 3 },
+              { "code": "BD", "pct": 4.2, "tier": 3 },
+              { "code": "US", "pct": 4.1, "tier": 1 }
+            ],
+            "other": 38.2,
+            "followersFromFollowers": 64.2,
+            "iOS": 48.4,
+            "gender": { "male": 78.7, "female": 20.0 }
+          },
+          "tierScore": { "tier1": 4.1, "tier2": 0, "tier1plus2": 4.1 },
+          "verdict": "😐 Below expectations — KOL QRT didn't bring T1 traffic"
+        },
+        {
+          "id": "2056781967694106861",
+          "date": "2026-05-19",
+          "text": "NFT COMMUNITIES ARE JUST EXPENSIVE GROUP CHATS (Space recording)",
+          "category": "Space recording",
+          "engagement": {
+            "impressions": 1600,
+            "likes": 78,
+            "replies": 31,
+            "reposts": 18,
+            "spaceListeners": 289
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 41.8, "tier": 3 },
+              { "code": "US", "pct": 8.6, "tier": 1 },
+              { "code": "IN", "pct": 4.4, "tier": 3 },
+              { "code": "UK", "pct": 3.3, "tier": 1 },
+              { "code": "ID", "pct": 3.2, "tier": 3 }
+            ],
+            "other": 38.7,
+            "followersFromFollowers": 59.5,
+            "iOS": 40.8,
+            "web": 21.7,
+            "gender": { "male": 88.1, "female": 9.3 }
+          },
+          "tierScore": { "tier1": 11.9, "tier2": 0, "tier1plus2": 11.9 },
+          "verdict": "✅ Strong — 2nd best for T1. Space recordings consistently good"
+        },
+        {
+          "id": "2057872315057164588",
+          "date": "2026-05-22",
+          "text": "VOICE spotted 🟣🔊 (QRT @taiyoo)",
+          "category": "QRT community",
+          "engagement": {
+            "impressions": 1500,
+            "likes": 67,
+            "replies": 27,
+            "reposts": 2
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 38.9, "tier": 3 },
+              { "code": "KZ", "pct": 7.4, "tier": 3 },
+              { "code": "ID", "pct": 5.5, "tier": 3 },
+              { "code": "IN", "pct": 4.9, "tier": 3 },
+              { "code": "US", "pct": 4.6, "tier": 1 }
+            ],
+            "other": 38.6,
+            "followersFromFollowers": 72.9,
+            "iOS": 61.2,
+            "gender": { "male": 80.0, "female": 17.1 }
+          },
+          "tierScore": { "tier1": 4.6, "tier2": 0, "tier1plus2": 4.6 },
+          "verdict": "😐 Organic (73% followers) but no T1 — community amplification only"
+        },
+        {
+          "id": "2058560838491877774",
+          "date": "2026-05-24",
+          "text": "gm to VOICE Social Camp users only",
+          "category": "Vibe/Mascot",
+          "engagement": {
+            "impressions": 1500,
+            "likes": 107,
+            "replies": 61,
+            "reposts": 7
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 47.5, "tier": 3 },
+              { "code": "ID", "pct": 7.3, "tier": 3 },
+              { "code": "IN", "pct": 6.9, "tier": 3 },
+              { "code": "US", "pct": 5.1, "tier": 1 },
+              { "code": "BD", "pct": 4.2, "tier": 3 }
+            ],
+            "other": 29.1,
+            "followersFromFollowers": 68.0,
+            "iOS": 38.3,
+            "gender": { "male": 83.0, "female": 12.6 }
+          },
+          "tierScore": { "tier1": 5.1, "tier2": 0, "tier1plus2": 5.1 },
+          "verdict": "😐 Mid — vibe-only post, follower-heavy but no T1 pull"
+        },
+        {
+          "id": "2056728800021393810",
+          "date": "2026-05-19",
+          "text": "VOICE letters made of 🟣 emojis",
+          "category": "Vibe/Mascot",
+          "engagement": {
+            "impressions": 1500,
+            "likes": 79,
+            "replies": 25,
+            "reposts": 5
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 42.2, "tier": 3 },
+              { "code": "IN", "pct": 8.2, "tier": 3 },
+              { "code": "TR", "pct": 6.0, "tier": 3 },
+              { "code": "ID", "pct": 4.3, "tier": 3 },
+              { "code": "BD", "pct": 3.9, "tier": 3 }
+            ],
+            "other": 35.4,
+            "followersFromFollowers": 72.0,
+            "iOS": 40.2,
+            "gender": { "male": 84.9, "female": 12.5 }
+          },
+          "tierScore": { "tier1": 0, "tier2": 0, "tier1plus2": 0 },
+          "verdict": "❌ Worst for T1 — brand vibe with zero T1 in top 5"
+        },
+        {
+          "id": "2056490008996110668",
+          "date": "2026-05-19",
+          "text": "cool pic bro (QRT comparing VOICE to contract.dev)",
+          "category": "QRT community",
+          "engagement": {
+            "impressions": 2900,
+            "likes": 128,
+            "replies": 56,
+            "reposts": 3
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 51.1, "tier": 3 },
+              { "code": "IN", "pct": 5.8, "tier": 3 },
+              { "code": "BD", "pct": 4.4, "tier": 3 },
+              { "code": "US", "pct": 4.1, "tier": 1 },
+              { "code": "ID", "pct": 4.1, "tier": 3 }
+            ],
+            "other": 30.5,
+            "followersFromFollowers": 60.6,
+            "iOS": 47.7,
+            "gender": { "male": 86.6, "female": 11.9 }
+          },
+          "tierScore": { "tier1": 4.1, "tier2": 0, "tier1plus2": 4.1 },
+          "verdict": "😐 NG-heavy 51% — community QRT didn't help T1"
+        },
+        {
+          "id": "2056399328982217180",
+          "date": "2026-05-18",
+          "text": "Babe wake up, there is 1 week left to earn $2,500 (QRT Social Camp Partner launch)",
+          "category": "QRT/$$",
+          "engagement": {
+            "impressions": 2900,
+            "likes": 82,
+            "replies": 42,
+            "reposts": 8
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 53.6, "tier": 3 },
+              { "code": "IN", "pct": 4.9, "tier": 3 },
+              { "code": "ID", "pct": 4.4, "tier": 3 },
+              { "code": "US", "pct": 4.4, "tier": 1 },
+              { "code": "BD", "pct": 3.4, "tier": 3 }
+            ],
+            "other": 29.4,
+            "followersFromFollowers": 63.0,
+            "iOS": 61.4,
+            "gender": { "male": 86.1, "female": 12.1 }
+          },
+          "tierScore": { "tier1": 4.4, "tier2": 0, "tier1plus2": 4.4 },
+          "verdict": "❌ Money in headline = NG farmer trigger (53.6% NG)"
+        },
+        {
+          "id": "2058667173535690849",
+          "date": "2026-05-25",
+          "text": "VOICE is the fastest-growing OpinionFi (copypasta)",
+          "category": "Copypasta",
+          "engagement": {
+            "impressions": 1300,
+            "likes": 79,
+            "replies": 44,
+            "reposts": 7
+          },
+          "audience": {
+            "countries": [
+              { "code": "NG", "pct": 45.6, "tier": 3 },
+              { "code": "US", "pct": 6.6, "tier": 1 },
+              { "code": "BR", "pct": 5.8, "tier": 3 },
+              { "code": "ID", "pct": 4.2, "tier": 3 },
+              { "code": "UK", "pct": 4.0, "tier": 1 }
+            ],
+            "other": 33.8,
+            "followersFromFollowers": 71.7,
+            "iOS": 49.1,
+            "gender": { "male": 84.3, "female": 11.8 }
+          },
+          "tierScore": { "tier1": 10.6, "tier2": 0, "tier1plus2": 10.6 },
+          "verdict": "✅ Surprise win — copypasta hit 10.6% T1 (3rd best of week)"
+        },
+        {
+          "id": "2058964795181691211",
+          "date": "2026-05-25",
+          "text": "we just added Overtime for partnership cluster",
+          "category": "Product announcement",
+          "engagement": {
+            "impressions": 2000,
+            "likes": 96,
+            "replies": 50,
+            "reposts": 23
+          },
+          "audience": {
+            "countries": [],
+            "other": 0,
+            "note": "Audience data not ready yet — too recent (May 25). Will update next week."
+          },
+          "tierScore": { "tier1": null, "tier2": null, "tier1plus2": null },
+          "verdict": "⏳ Pending audience data"
+        }
+      ]
+    }
+  ]
+}

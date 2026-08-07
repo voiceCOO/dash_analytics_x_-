@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VOICE · Account Lookup</title>
+<link rel="icon" href="assets/favicon.ico" />
+<link rel="stylesheet" href="brand.css" />
+<style>
+    .lead { font-size: 14px; color: var(--w50); margin: 6px 0 22px; max-width: 640px; line-height: 1.5; }
+    .searchbox { display: flex; gap: 10px; max-width: 640px; margin-bottom: 12px; }
+    .searchbox .inp { flex: 1; position: relative; }
+    .searchbox input {
+        width: 100%; padding: 15px 18px; font-size: 15px; color: var(--w);
+        background: var(--w04); border: 1px solid var(--w10); border-radius: var(--radius-pill);
+        outline: none; font-family: inherit;
+    }
+    .searchbox input::placeholder { color: var(--w30); }
+    .searchbox input:focus { border-color: var(--pink-30); }
+    .btn {
+        padding: 0 26px; font-size: 14px; font-weight: 600; color: var(--w); font-family: inherit;
+        background: linear-gradient(120deg, var(--pink), var(--purple)); border: none;
+        border-radius: var(--radius-pill); cursor: pointer; transition: filter 0.15s ease;
+    }
+    .btn:hover { filter: brightness(1.1); }
+    .btn:disabled { opacity: 0.5; cursor: default; }
+    .quick { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 26px; }
+    .quick span { font-size: 11px; color: var(--w30); align-self: center; }
+    .qb { padding: 5px 12px; font-size: 12.5px; color: var(--w60); background: var(--w04);
+        border: 1px solid var(--w08); border-radius: var(--radius-pill); cursor: pointer; }
+    .qb:hover { color: var(--w); background: var(--w08); }
+
+    .result { max-width: 760px; padding: 26px; margin-top: 8px; }
+    .rhead { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+    .rname { font-size: 22px; font-weight: 700; }
+    .rname .h { color: var(--w30); font-weight: 500; font-size: 15px; margin-left: 7px; }
+    .rverdict { font-size: 13.5px; padding: 6px 13px; border-radius: var(--radius-pill);
+        border: 1px solid; font-weight: 600; }
+    .rgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0; }
+    @media (max-width: 620px) { .rgrid { grid-template-columns: repeat(2, 1fr); } }
+    .rtile { padding: 15px 16px; border: 1px solid var(--w08); border-radius: var(--radius-md);
+        background: var(--w02); }
+    .rtile .l { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--w30); }
+    .rtile .v { font-size: 23px; font-weight: 700; margin-top: 6px; }
+    .rtile .s { font-size: 11.5px; color: var(--w50); margin-top: 4px; }
+
+    .tf-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--w30);
+        margin: 8px 0 10px; }
+    .tf-row { position: relative; display: grid; grid-template-columns: 34px 1fr 90px;
+        align-items: center; padding: 10px 14px; border-top: 1px solid var(--w08); overflow: hidden; }
+    .tf-row:hover { background: var(--w02); }
+    .tf-row > * { position: relative; z-index: 1; }
+    .tf-row > .tf-fill { position: absolute; left: 0; top: 0; bottom: 0; z-index: 0; }
+    .tf-rank { font-size: 13px; color: var(--w50); font-weight: 600; }
+    .tf-name { font-size: 13.5px; font-weight: 500; }
+    .tf-name .f { font-size: 11.5px; color: var(--w30); margin-left: 7px; }
+    .tf-score { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+    .state { max-width: 760px; padding: 40px 26px; text-align: center; color: var(--w30); font-size: 14px; }
+    .err { color: var(--red); }
+    .mockflag { font-size: 11px; color: var(--peach); margin-left: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header class="topbar">
+        <div class="brand-lockup">
+            <img src="assets/logo.webp" alt="VOICE" />
+            <div>
+                <div class="bt">VOICE</div>
+                <div class="brand-sub"><b style="color:var(--pink);font-weight:600;letter-spacing:.04em">LOOKUP</b> · any @handle → Sorsa score, audience, top followers</div>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/lookup.html" class="active">Account Lookup</a>
+        </nav>
+    </header>
+
+    <div class="lead">
+        Check any X account the way Sorsa’s own site would — score, follower quality, who the
+        big followers are. Runs through our API key, so the whole team uses it without a Sorsa web seat.
+    </div>
+
+    <div class="searchbox">
+        <div class="inp"><input id="q" placeholder="@handle  (e.g. cobie, voicehavefun)" autocomplete="off" /></div>
+        <button class="btn" id="go">Look up</button>
+    </div>
+    <div class="quick">
+        <span>try:</span>
+        <button class="qb" data-h="voicehavefun">@voicehavefun</button>
+        <button class="qb" data-h="killianvoice">@killianvoice</button>
+        <button class="qb" data-h="cobie">@cobie</button>
+        <button class="qb" data-h="zachxbt">@zachxbt</button>
+    </div>
+
+    <div id="out"></div>
+</div>
+
+<script>
+const out = document.getElementById('out');
+const input = document.getElementById('q');
+
+function el(tag, attrs = {}, children = []) {
+    const n = document.createElement(tag);
+    for (const k in attrs) {
+        if (k === 'class') n.className = attrs[k];
+        else if (k === 'html') n.innerHTML = attrs[k];
+        else n.setAttribute(k, attrs[k]);
+    }
+    (Array.isArray(children) ? children : [children]).forEach(c => {
+        if (c == null) return;
+        n.appendChild(typeof c === 'object' ? c : document.createTextNode(String(c)));
+    });
+    return n;
+}
+const fmt = n => {
+    if (n == null) return '—';
+    if (Math.abs(n) >= 1e6) return (n / 1e6).toFixed(2).replace(/\.?0+$/, '') + 'M';
+    if (Math.abs(n) >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'k';
+    return String(n);
+};
+const round = (n, d = 0) => n == null ? '—' : Number(n).toFixed(d).replace(/\.0$/, '');
+function scoreColor(s) {
+    if (s == null) return 'var(--w50)';
+    if (s >= 500) return 'var(--peach)';
+    if (s >= 100) return 'var(--pink)';
+    if (s >= 20) return 'var(--w)';
+    return 'var(--w50)';
+}
+function verdictClass(s, bot) {
+    if (bot != null && bot >= 40) return 'red';
+    if (s >= 500) return 'green';
+    if (s >= 100) return 'green';
+    if (s >= 20) return 'yellow';
+    return 'red';
+}
+
+function render(p) {
+    out.innerHTML = '';
+    const vc = verdictClass(p.sorsaScore || 0, p.botPct);
+    const card = el('div', { class: 'card result' });
+
+    card.appendChild(el('div', { class: 'rhead' }, [
+        el('div', { class: 'rname' }, [p.name || p.handle, el('span', { class: 'h' }, '@' + p.handle)]),
+        p.verified ? el('span', { class: 'pill', style: 'color:var(--pink);border-color:var(--pink-30)' }, '✓ verified') : null,
+        p.verdict ? el('span', { class: 'rverdict bg-' + vc + ' tl-' + vc }, p.verdict) : null,
+        p.mock ? el('span', { class: 'mockflag' }, '· mock') : null,
+        p.cached ? el('span', { class: 'mockflag', style: 'color:var(--w30)' }, '· cached') : null,
+    ]));
+
+    const dStr = p.scoreWeekDelta != null
+        ? (p.scoreWeekDelta >= 0 ? '▲ ' : '▼ ') + Math.abs(Number(p.scoreWeekDelta)).toFixed(1) + ' /7d' : null;
+    card.appendChild(el('div', { class: 'rgrid' }, [
+        rtile('Sorsa Score', el('span', { style: 'color:' + scoreColor(p.sorsaScore) }, round(p.sorsaScore, 0)),
+            dStr, dStr && p.scoreWeekDelta < 0 ? 'down' : 'up'),
+        rtile('Followers', fmt(p.followers), p.friends != null ? fmt(p.friends) + ' following' : null),
+        rtile('Tweets', fmt(p.tweets), null),
+        rtile('Bots', p.botPct != null ? round(p.botPct, 1) + '%' : 'n/a',
+            p.botPct == null ? 'not on this plan' : null),
+    ]));
+
+    if (p.topFollowers && p.topFollowers.length) {
+        card.appendChild(el('div', { class: 'tf-title' }, 'Top followers by Sorsa score'));
+        const max = Math.max(...p.topFollowers.map(u => u.score || 0), 1);
+        p.topFollowers.forEach((u, i) => {
+            const w = ((u.score || 0) / max * 100).toFixed(1);
+            card.appendChild(el('div', { class: 'tf-row' }, [
+                el('div', { class: 'tf-fill', style: `width:${w}%;background:var(--pink-06)` }),
+                el('div', { class: 'tf-rank' }, '#' + (i + 1)),
+                el('a', { class: 'tf-name', href: 'https://x.com/' + u.handle, target: '_blank', rel: 'noopener' }, [
+                    '@' + u.handle,
+                    u.followers != null ? el('span', { class: 'f' }, fmt(u.followers) + ' flw') : null,
+                ]),
+                el('div', { class: 'tf-score', style: 'color:' + scoreColor(u.score) }, round(u.score, 0)),
+            ]));
+        });
+    }
+    out.appendChild(card);
+}
+
+function lookup(h) {
+    h = (h || '').trim().replace(/^@/, '');
+    if (!h) return;
+    input.value = h;
+    out.innerHTML = '<div class="state">Looking up @' + h + ' …</div>';
+    document.getElementById('go').disabled = true;
+    fetch('/api/lookup?handle=' + encodeURIComponent(h))
+        .then(r => r.json())
+        .then(p => {
+            document.getElementById('go').disabled = false;
+            if (p.error) { out.innerHTML = '<div class="state err">Error: ' + p.error + '</div>'; return; }
+            render(p);
+        })
+        .catch(e => {
+            document.getElementById('go').disabled = false;
+            out.innerHTML = '<div class="state err">Lookup failed — is the server running? (start-dashboard.bat)</div>';
+            console.error(e);
+        });
+}
+function rtile(label, valueNode, sub, dir) {
+    return el('div', { class: 'rtile' }, [
+        el('div', { class: 'l' }, label),
+        el('div', { class: 'v' }, valueNode),
+        sub != null ? el('div', { class: 's ' + (dir === 'down' ? 'down' : dir === 'up' ? 'up' : '') }, sub) : null,
+    ]);
+}
+
+document.getElementById('go').onclick = () => lookup(input.value);
+input.addEventListener('keydown', e => { if (e.key === 'Enter') lookup(input.value); });
+document.querySelectorAll('.qb').forEach(b => b.onclick = () => lookup(b.dataset.h));
+</script>
+</body>
+</html>
