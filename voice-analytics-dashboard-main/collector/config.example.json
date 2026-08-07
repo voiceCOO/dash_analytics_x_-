@@ -1,13 +1,14 @@
 {
   "sorsa": {
-    "apiKey": "PASTE_YOUR_SORSA_KEY_HERE",
+    "apiKey": "83fa30c7-dbea-4da4-8731-082d8fa6093e",
     "baseUrl": "https://api.sorsa.io/v3",
     "plan": "10K",
     "monthlyLimit": 10000
   },
   "accounts": [
     { "handle": "voicehavefun", "label": "VOICE", "primary": true },
-    { "handle": "killianvoice", "label": "Killian (founder)", "primary": false }
+    { "handle": "killianvoice", "label": "Killian (founder)", "primary": false },
+    { "handle": "Kimi_0x", "label": "Kimi (COO)", "primary": false }
   ],
   "retweeterSampleLimit": 50,
   "scoreCacheDays": 7,
